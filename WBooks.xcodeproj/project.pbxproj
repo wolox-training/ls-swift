@@ -39,6 +39,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1E5D9FAA2726FFD7001CEA71 /* BaseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfig.xcconfig; sourceTree = "<group>"; };
+		1E5D9FAB2726FFEA001CEA71 /* ConfigDev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigDev.xcconfig; sourceTree = "<group>"; };
+		1E5D9FAC27270004001CEA71 /* ConfigProd.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigProd.xcconfig; sourceTree = "<group>"; };
 		1EC4BB31272380BB00F1A058 /* WBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC4BB34272380BB00F1A058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EC4BB36272380BB00F1A058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -91,6 +94,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1E5D9FA72726F0C0001CEA71 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				1EC4BB34272380BB00F1A058 /* AppDelegate.swift */,
+				1EC4BB36272380BB00F1A058 /* SceneDelegate.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		1E5D9FA82726F2AD001CEA71 /* ConfigurationFiles */ = {
+			isa = PBXGroup;
+			children = (
+				1E5D9FAA2726FFD7001CEA71 /* BaseConfig.xcconfig */,
+				1E5D9FAB2726FFEA001CEA71 /* ConfigDev.xcconfig */,
+				1E5D9FAC27270004001CEA71 /* ConfigProd.xcconfig */,
+			);
+			path = ConfigurationFiles;
+			sourceTree = "<group>";
+		};
+		1E5D9FA92726FD01001CEA71 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				1EC4BB3D272380BE00F1A058 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		1EC4BB28272380BB00F1A058 = {
 			isa = PBXGroup;
 			children = (
@@ -116,11 +146,11 @@
 		1EC4BB33272380BB00F1A058 /* WBooks */ = {
 			isa = PBXGroup;
 			children = (
-				1EC4BB34272380BB00F1A058 /* AppDelegate.swift */,
-				1EC4BB36272380BB00F1A058 /* SceneDelegate.swift */,
+				1E5D9FA72726F0C0001CEA71 /* App */,
+				1E5D9FA82726F2AD001CEA71 /* ConfigurationFiles */,
+				1E5D9FA92726FD01001CEA71 /* Resources */,
 				1EC4BB38272380BB00F1A058 /* ViewController.swift */,
 				1EC4BB3A272380BB00F1A058 /* Main.storyboard */,
-				1EC4BB3D272380BE00F1A058 /* Assets.xcassets */,
 				1EC4BB3F272380BE00F1A058 /* LaunchScreen.storyboard */,
 				1EC4BB42272380BE00F1A058 /* Info.plist */,
 			);
@@ -466,6 +496,7 @@
 /* Begin XCBuildConfiguration section */
 		1EC4BB59272380BE00F1A058 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E5D9FAB2726FFEA001CEA71 /* ConfigDev.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -527,6 +558,7 @@
 		};
 		1EC4BB5A272380BE00F1A058 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1E5D9FAC27270004001CEA71 /* ConfigProd.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ANALYZER_NONNULL = YES;
@@ -585,12 +617,14 @@
 			baseConfigurationReference = DBBAD6281A26D0122159B3B2 /* Pods-WBooks.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(ASSETCATALOG_COMPILER_APPICON_NAME)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WBooks/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -614,12 +648,14 @@
 			baseConfigurationReference = B675FC8F1F51A26CC0B68EB7 /* Pods-WBooks.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = "$(ASSETCATALOG_COMPILER_APPICON_NAME)";
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = WBooks/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -646,6 +682,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -671,6 +708,7 @@
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
