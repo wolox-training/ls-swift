@@ -1,0 +1,6 @@
+framework module Pods_WBooks {
+  umbrella header "Pods-WBooks-umbrella.h"
+
+  export *
+  module * { export * }
+}
