@@ -73,18 +73,15 @@ extension LoginViewController: UITextFieldDelegate {
 
 extension LoginViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
-        
         guard let userInfo = notification.userInfo else { return }
         var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        
         var contentInset:UIEdgeInsets = loginView.scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height + 20
         loginView.scrollView.contentInset = contentInset
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        
         let contentInset:UIEdgeInsets = UIEdgeInsets.zero
         loginView.scrollView.contentInset = contentInset
     }
