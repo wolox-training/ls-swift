@@ -21,6 +21,7 @@ extension LoginView {
     public func configure(_ viewModel: LoginViewModel) {
         usernameTextField.placeholder = viewModel.usernamePlaceholder
         passwordTextField.placeholder = viewModel.passwordPlaceholder
+        passwordTextField.isSecureTextEntry = true
         signInButton.setTitle(viewModel.signInTitle.uppercased(), for: .normal)
         signInButton.backgroundColor = .none
         signInButton.layer.cornerRadius = 20
