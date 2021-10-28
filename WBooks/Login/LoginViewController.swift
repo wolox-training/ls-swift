@@ -16,7 +16,6 @@ final class LoginViewController: BaseViewController {
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
         loginView.configure(loginViewModel)
         addTargetButtonToSignIn()
         loginView.usernameTextField.delegate = self
