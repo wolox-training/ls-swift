@@ -31,7 +31,7 @@ public extension NibLoadeable {
             fatalError("Failed to instantiate \(String(describing: Self.self)).xib")
         }
         view.translatesAutoresizingMaskIntoConstraints = false
-        self.addSubview(view)
+        addSubview(view)
         let views = ["view": view]
         let verticalConstraints = NSLayoutConstraint.constraints(withVisualFormat: "V:|-0-[view]-0-|",
                                                                  options: .alignAllLastBaseline,
