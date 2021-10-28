@@ -36,11 +36,11 @@ final class LoginViewController: BaseViewController {
     func registerNotification() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillShow),
-                                               name:UIResponder.keyboardWillShowNotification,
+                                               name: UIResponder.keyboardWillShowNotification,
                                                object: nil)
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(keyboardWillHide),
-                                               name:UIResponder.keyboardWillHideNotification,
+                                               name: UIResponder.keyboardWillHideNotification,
                                                object: nil)
     }
     
