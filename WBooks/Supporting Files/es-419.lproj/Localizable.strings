@@ -7,6 +7,6 @@
 */
 
 //MARK: Login
-"usernamePlaceholder"           = "Usuario";
-"passwordPlaceholder"           = "Contraseña";
-"signInTitle"                   = "Ingresar";
+"usernamePlaceholder" = "Usuario";
+"passwordPlaceholder" = "Contraseña";
+"signInTitle" = "Ingresar";

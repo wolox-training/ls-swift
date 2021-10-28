@@ -7,6 +7,6 @@
 */
 
 //MARK: Login
-"usernamePlaceholder"           = "Username";
-"passwordPlaceholder"           = "Password";
-"signInTitle"                   = "Sign In";
+"usernamePlaceholder" = "Username";
+"passwordPlaceholder" = "Password";
+"signInTitle" = "Sign In";
