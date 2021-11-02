@@ -11,6 +11,9 @@ enum AssetsColor: String {
     case borderButtonInitial = "BorderButtonInitial"
     case primaryColor = "PrimaryColor"
     case secondaryColor = "SecondaryColor"
+    case titleColor = "TitleColor"
+    case accentColor = "AccentColor"
+    case shadowBoxColor = "ShadowBoxColor"
 }
 
 extension UIColor {

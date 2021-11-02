@@ -44,3 +44,13 @@ public extension NibLoadeable {
         addConstraints(verticalConstraints + horizontalConstraints)
     }
 }
+
+extension UIView {
+    func shadow() {
+        layer.masksToBounds = false
+        layer.shadowColor = UIColor.appColor(.shadowBoxColor)!.cgColor
+        layer.shadowOpacity = 1
+        layer.shadowOffset = CGSize(width: 0, height: 1)
+        layer.shadowRadius = 5
+    }
+}

@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LoginView: BaseNibView {
+final class LoginView: BaseNibView {
     
     //MARK: Properties
     @IBOutlet weak var scrollView: UIScrollView!
