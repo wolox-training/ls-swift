@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  WBooks
+
+  Created by leonardo.a.simoza on 27/10/21.
+  
+*/
+
+//MARK: Login
+"usernamePlaceholder" = "Username";
+"passwordPlaceholder" = "Password";
+"signInTitle" = "Sign In";
