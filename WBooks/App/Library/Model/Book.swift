@@ -11,10 +11,10 @@ typealias Books = [Book]
 
 // MARK: - Book
 struct Book: Codable, Hashable {
-    let image: String?
-    let title: String?
+    let image,
+        title,
+        author: String?
     let id: Int?
-    let author: String?
     
     enum CodingKeys: String, CodingKey {
         case author, title, image
