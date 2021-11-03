@@ -7,8 +7,7 @@
 
 import UIKit
 
-class LibraryView: BaseNibView {
-    
+final class LibraryView: BaseNibView {
     //MARK: Properties
     @IBOutlet weak var libraryTable: UITableView!
     
