@@ -32,12 +32,10 @@ extension UILabel: TypographyExtensions {
     }
     
     fileprivate var attributes: [NSAttributedString.Key : Any]? {
-        get {
-            if let attributedText = attributedText {
-                return attributedText.attributes(at: 0, effectiveRange: nil)
-            } else {
-                return nil
-            }
+        if let attributedText = attributedText {
+            return attributedText.attributes(at: 0, effectiveRange: nil)
+        } else {
+            return nil
         }
     }
     
