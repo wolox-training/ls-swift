@@ -8,17 +8,15 @@
 import Foundation
 
 public class LibraryViewModel: NSObject {
-    
     private(set) var bookData: Books! {
         didSet {
             self.bindBooks()
         }
     }
+    var bindBooks: () -> Void = {}
     var navBarTitle: String {
         "libraryTitleNavBar".localized()
     }
-    
-    var bindBooks : (() -> ()) = {}
     
     func getBooks(completion: @escaping (Result<Books, Error>) -> Void) {
         Helper.loadDummy { result in

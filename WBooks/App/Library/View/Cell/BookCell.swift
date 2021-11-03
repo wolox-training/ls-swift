@@ -7,8 +7,7 @@
 
 import UIKit
 
-class BookCell: UITableViewCell {
-    
+final class BookCell: UITableViewCell {
     //MARK: Properties
     @IBOutlet weak var cellView: UIView! {
         didSet {
