@@ -10,3 +10,10 @@
 "usernamePlaceholder" = "Usuario";
 "passwordPlaceholder" = "Contraseña";
 "signInTitle" = "Ingresar";
+
+//MARK: Navigation bar
+"libraryTitleNavBar" = "Librería";
+"bookDetailTitleNavBar" = "Detalle del libro";
+"wishlistTitleNavBar" = "Lista deseada";
+"suggestTitleNavBar" = "Sugerencias";
+"rentalsTitleNavBar" = "Alquileres";

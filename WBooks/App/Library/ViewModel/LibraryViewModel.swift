@@ -14,6 +14,9 @@ public class LibraryViewModel: NSObject {
             self.bindBooks()
         }
     }
+    var navBarTitle: String {
+        "libraryTitleNavBar".localized()
+    }
     
     var bindBooks : (() -> ()) = {}
     
