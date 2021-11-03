@@ -8,13 +8,11 @@
 import Foundation
 
 public class LibraryViewModel: NSObject {
-    
     private(set) var bookData: Books! {
         didSet {
             self.bindBooks()
         }
     }
-    
     var bindBooks: () -> Void = {}
     
     func getBooks(completion: @escaping (Result<Books, Error>) -> Void) {
