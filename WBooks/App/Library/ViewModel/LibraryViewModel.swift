@@ -15,7 +15,7 @@ public class LibraryViewModel: NSObject {
         }
     }
     
-    var bindBooks : (() -> ()) = {}
+    var bindBooks: () -> Void = {}
     
     func getBooks(completion: @escaping (Result<Books, Error>) -> Void) {
         Helper.loadDummy { result in
