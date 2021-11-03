@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="BookCell" customModule="WBooks" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="NAw-84-teW" customClass="BookCell" customModule="WBooks" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="NAw-84-teW" id="FgK-Lu-SxB">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Ehj-Zg-3TM">
+                        <rect key="frame" x="30" y="15" width="40" height="60"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="Ehj-Zg-3TM" secondAttribute="height" multiplier="2:3" id="Bh4-dD-ph6"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label LabelLabel Label" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fwF-0i-etj">
+                        <rect key="frame" x="90" y="15" width="304" height="20.5"/>
+                        <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Autor" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pq5-03-GRX">
+                        <rect key="frame" x="90" y="38.5" width="37.5" height="18"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="Ehj-Zg-3TM" firstAttribute="top" secondItem="FgK-Lu-SxB" secondAttribute="top" constant="15" id="4rM-Zc-inD"/>
+                    <constraint firstItem="Ehj-Zg-3TM" firstAttribute="leading" secondItem="FgK-Lu-SxB" secondAttribute="leading" constant="30" id="Vt4-gC-xeH"/>
+                    <constraint firstAttribute="bottom" secondItem="Ehj-Zg-3TM" secondAttribute="bottom" constant="15" id="c6h-Io-XV0"/>
+                    <constraint firstItem="fwF-0i-etj" firstAttribute="leading" secondItem="Ehj-Zg-3TM" secondAttribute="trailing" constant="20" id="d0O-lV-jU8"/>
+                    <constraint firstItem="pq5-03-GRX" firstAttribute="leading" secondItem="fwF-0i-etj" secondAttribute="leading" id="gNH-KX-rL5"/>
+                    <constraint firstItem="pq5-03-GRX" firstAttribute="top" secondItem="fwF-0i-etj" secondAttribute="bottom" constant="3" id="lNB-6a-8uR"/>
+                    <constraint firstItem="fwF-0i-etj" firstAttribute="top" secondItem="FgK-Lu-SxB" secondAttribute="top" constant="15" id="qwo-VJ-R6p"/>
+                    <constraint firstAttribute="trailing" secondItem="fwF-0i-etj" secondAttribute="trailing" constant="20" symbolic="YES" id="ydF-oM-3Uo"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="bookAuthor" destination="pq5-03-GRX" id="DDs-Wx-2xC"/>
+                <outlet property="bookImage" destination="Ehj-Zg-3TM" id="xaK-Ev-SxK"/>
+                <outlet property="bookTitle" destination="fwF-0i-etj" id="puH-xX-sqx"/>
+                <outlet property="cellView" destination="FgK-Lu-SxB" id="6du-fk-ndi"/>
+            </connections>
+            <point key="canvasLocation" x="1.6000000000000001" y="-84.557721139430285"/>
+        </tableViewCell>
+    </objects>
+</document>

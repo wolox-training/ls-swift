@@ -1,0 +1,38 @@
+[
+    {
+        "id": 1,
+        "title": "A Little Bird Told Me",
+        "author": "Timothy Cross",
+        "image": "Cover1"
+    },
+    {
+        "id": 2,
+        "title": "When the Doves Disappeared",
+        "author": "Sofi Oksanen",
+        "image": "Cover2"
+    },
+    {
+        "id": 3,
+        "title": "The Best Book in the World",
+        "author": "Peter Stjernstróm",
+        "image": "Cover3"
+    },
+    {
+        "id": 4,
+        "title": "Be Creative",
+        "author": "Tony Alcazar",
+        "image": "Cover4"
+    },
+    {
+        "id": 5,
+        "title": "Redesign the Web",
+        "author": "Liliana Castilla",
+        "image": "Cover5"
+    },
+    {
+        "id": 6,
+        "title": "Station K",
+        "author": "Peter Stjernstróm",
+        "image": "Cover6"
+    }
+]
