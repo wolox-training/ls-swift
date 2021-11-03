@@ -18,7 +18,6 @@ extension NSAttributedString {
 }
 
 extension UILabel: TypographyExtensions {
-    
     var paragraphStyle: NSParagraphStyle? {
         getAttribute(.paragraphStyle)
     }
