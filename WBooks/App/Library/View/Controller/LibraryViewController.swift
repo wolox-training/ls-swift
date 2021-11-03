@@ -7,11 +7,12 @@
 
 import UIKit
 
-class LibraryViewController: BaseViewController {
-    
+final class LibraryViewController: BaseViewController {
+    //MARK: Properties
     private lazy var libraryView = LibraryView()
     private var viewModel = LibraryViewModel()
     
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTable()
