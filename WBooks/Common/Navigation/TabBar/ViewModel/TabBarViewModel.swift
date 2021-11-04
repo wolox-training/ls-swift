@@ -16,7 +16,7 @@ enum MenuTabBar: String, CaseIterable {
 
 public class TabBarViewModel: NSObject {
     func getViewControllers() -> [UIViewController] {
-        var tabItems = [TabBarItem]()
+        var tabItems: TabBarItems = []
         
         for tabs in MenuTabBar.allCases {
             switch tabs {
