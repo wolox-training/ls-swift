@@ -52,8 +52,8 @@ final class LoginViewController: BaseViewController {
     //MARK: Actions
     @objc private func signInTapped() {
         print("WELCOME User: \(String(describing: loginView.usernameTextField.text!))")
-        let vc = LibraryViewController()
-        navigationController?.pushViewController(vc, animated: true)
+        let tabBarController = TabBarController()
+        present(tabBarController, animated: true, pushing: true)
     }
         
     private func addTargetButtonToSignIn() {

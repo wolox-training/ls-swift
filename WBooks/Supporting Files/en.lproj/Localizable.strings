@@ -15,5 +15,12 @@
 "libraryTitleNavBar" = "Library";
 "bookDetailTitleNavBar" = "Book detail";
 "wishlistTitleNavBar" = "Wishlist";
-"suggestTitleNavBar" = "Suggest";
-"rentalsTitleNavBar" = "Rentals";
+"suggestTitleNavBar" = "Suggest Book";
+"rentalsTitleNavBar" = "My Rentals";
+"comentsTitleNavBar" = "Coments";
+
+//MARK: Tab bar
+"libraryTitleTabBar" = "Library";
+"wishlistTitleTabBar" = "Wishlist";
+"suggestTitleTabBar" = "Suggest";
+"rentalsTitleTabBar" = "Rentals";
