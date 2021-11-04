@@ -8,12 +8,27 @@
 import UIKit
 
 final class NavigationController: UINavigationController {
+    override var preferredStatusBarStyle: UIStatusBarStyle {
+        .lightContent
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setNeedsStatusBarAppearanceUpdate()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         configuration()
     }
     
     func configuration() {
-        navigationBar.tintColor = .white
+        navigationBar.isTranslucent = true
+        navigationBar.backgroundColor = .clear
+        navigationBar.barStyle = .black
+        navigationBar.barTintColor = .clear
+        navigationBar.tintColor = .clear
+        navigationBar.setBackgroundImage(UIImage(), for: .default)
+        navigationBar.shadowImage = UIImage()
     }
 }

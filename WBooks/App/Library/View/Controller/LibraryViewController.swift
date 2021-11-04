@@ -17,6 +17,7 @@ final class LibraryViewController: BaseViewController {
         super.viewDidLoad()
         setupTable()
         loadLibrary()
+        configureNavigation()
     }
     
     override func loadView() {
@@ -34,6 +35,22 @@ final class LibraryViewController: BaseViewController {
                 print("failure")
             }
         }
+    }
+    
+    func configureNavigation() {
+        initNavigation(title: viewModel.navBarTitle, hasBack: false)
+        let tapGestureRecognizerSearch = UITapGestureRecognizer(target: self, action: #selector(activeSearch))
+        addNavBarRightIcon(iconName: .iconSearch, tapGestureRecognizer: tapGestureRecognizerSearch)
+        let tapGestureRecognizerNotification = UITapGestureRecognizer(target: self, action: #selector(redirectNotificaion))
+        addNavBarLeftIcon(iconName: .iconNotification, tapGestureRecognizer: tapGestureRecognizerNotification)
+    }
+    
+    @objc func activeSearch() {
+        print("Active search")
+    }
+    
+    @objc func redirectNotificaion() {
+        print("Redirect notification")
     }
 }
 
@@ -55,5 +72,14 @@ extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
         let cell = tableView.register(BookCell.self, indexPath: indexPath)
         cell.configureView(book: viewModel.bookData[indexPath.row])
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        libraryView.libraryTable.cellForRow(at: indexPath)?.backgroundColor = UIColor.appColor(.secondaryColor)?.withAlphaComponent(0.3)
+        print("Redirect to detail view")
+    }
+    
+    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
+        libraryView.libraryTable.cellForRow(at: indexPath)?.backgroundColor = .clear
     }
 }

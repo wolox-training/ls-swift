@@ -53,7 +53,7 @@ final class LoginViewController: BaseViewController {
     @objc private func signInTapped() {
         print("WELCOME User: \(String(describing: loginView.usernameTextField.text!))")
         let vc = LibraryViewController()
-        present(vc, animated: false, pushing: true, completion: nil)
+        navigationController?.pushViewController(vc, animated: true)
     }
         
     private func addTargetButtonToSignIn() {
