@@ -46,6 +46,8 @@
 		1EB1516827319E340058050D /* UILabel+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1516727319E340058050D /* UILabel+Extension.swift */; };
 		1EB1516A27319EA00058050D /* UITableViewCell+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1516927319EA00058050D /* UITableViewCell+Extension.swift */; };
 		1EB1516D273217B10058050D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1516C273217B10058050D /* UIImage+Extension.swift */; };
+		1EB151702733505F0058050D /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1516F2733505F0058050D /* TabBarItem.swift */; };
+		1EB15172273352E10058050D /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB15171273352E10058050D /* TabBarViewModel.swift */; };
 		1EC4BB35272380BB00F1A058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4BB34272380BB00F1A058 /* AppDelegate.swift */; };
 		1EC4BB37272380BB00F1A058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4BB36272380BB00F1A058 /* SceneDelegate.swift */; };
 		1EC4BB39272380BB00F1A058 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4BB38272380BB00F1A058 /* LoginViewController.swift */; };
@@ -120,6 +122,8 @@
 		1EB1516727319E340058050D /* UILabel+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UILabel+Extension.swift"; sourceTree = "<group>"; };
 		1EB1516927319EA00058050D /* UITableViewCell+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableViewCell+Extension.swift"; sourceTree = "<group>"; };
 		1EB1516C273217B10058050D /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		1EB1516F2733505F0058050D /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
+		1EB15171273352E10058050D /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
 		1EC4BB31272380BB00F1A058 /* WBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC4BB34272380BB00F1A058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EC4BB36272380BB00F1A058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -257,9 +261,9 @@
 		1E827E5E272BA1E6003A7E7F /* Library */ = {
 			isa = PBXGroup;
 			children = (
-				1EB1514327316EEC0058050D /* ViewModel */,
-				1EB1514227316EBF0058050D /* View */,
 				1EB1514427316F140058050D /* Model */,
+				1EB1514227316EBF0058050D /* View */,
+				1EB1514327316EEC0058050D /* ViewModel */,
 			);
 			path = Library;
 			sourceTree = "<group>";
@@ -268,7 +272,7 @@
 			isa = PBXGroup;
 			children = (
 				1E827E6C272BA803003A7E7F /* NavigationController.swift */,
-				1E827E6E272BAD09003A7E7F /* TabBarController.swift */,
+				1EB1516E273350050058050D /* TabBar */,
 			);
 			path = Navigation;
 			sourceTree = "<group>";
@@ -394,6 +398,48 @@
 				1EB1515027317B460058050D /* SFUIText-SemiboldItalic.ttf */,
 			);
 			path = SFUIText;
+			sourceTree = "<group>";
+		};
+		1EB1516E273350050058050D /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				1EB15174273424B40058050D /* Model */,
+				1EB15176273424FA0058050D /* View */,
+				1EB15175273424BB0058050D /* ViewModel */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		1EB15173273424A20058050D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				1E827E6E272BAD09003A7E7F /* TabBarController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		1EB15174273424B40058050D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				1EB1516F2733505F0058050D /* TabBarItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1EB15175273424BB0058050D /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1EB15171273352E10058050D /* TabBarViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		1EB15176273424FA0058050D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				1EB15173273424A20058050D /* Controller */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		1EC4BB28272380BB00F1A058 = {
@@ -747,9 +793,11 @@
 				1E6D322A272C520C005993D5 /* UITableView+Extension.swift in Sources */,
 				1E40EC5727287CC700FBD71F /* LoginView.swift in Sources */,
 				1EB1516627319AC40058050D /* GlobalConstants.swift in Sources */,
+				1EB15172273352E10058050D /* TabBarViewModel.swift in Sources */,
 				1EC4BB37272380BB00F1A058 /* SceneDelegate.swift in Sources */,
 				1EB1516A27319EA00058050D /* UITableViewCell+Extension.swift in Sources */,
 				1E827E66272BA6D7003A7E7F /* BookCell.swift in Sources */,
+				1EB151702733505F0058050D /* TabBarItem.swift in Sources */,
 				1EA59B3C272A1E7A00592820 /* UIViewController+Extension.swift in Sources */,
 				1E827E60272BA220003A7E7F /* LibraryViewController.swift in Sources */,
 				1EA59B2D27297C6000592820 /* LoginViewModel.swift in Sources */,

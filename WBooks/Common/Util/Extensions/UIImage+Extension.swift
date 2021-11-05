@@ -11,6 +11,10 @@ enum AssetsImage: String {
     case iconBack = "IconBack"
     case iconNotification = "IconNotification"
     case iconSearch = "IconSearch"
+    case iconTab1 = "IconTab1"
+    case iconTab2 = "IconTab2"
+    case iconTab3 = "IconTab3"
+    case iconTab4 = "IconTab4"
 }
 
 extension UIImage {

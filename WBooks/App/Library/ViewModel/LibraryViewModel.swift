@@ -18,7 +18,6 @@ public class LibraryViewModel: NSObject {
         "libraryTitleNavBar".localized()
     }
     
-    
     func getBooks(completion: @escaping (Result<Books, Error>) -> Void) {
         Helper.loadDummy { result in
             switch result {
