@@ -8,14 +8,17 @@
 import UIKit
 
 final class TabBarController: UITabBarController {
+    
     //MARK: Properties
     var viewModel = TabBarViewModel()
+    
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         viewControllers = viewModel.getViewControllers()
     }
+    
     //MARK: Custom methods
     private func configure() {
         tabBar.isTranslucent = false
