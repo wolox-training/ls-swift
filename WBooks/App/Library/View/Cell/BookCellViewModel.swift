@@ -17,12 +17,12 @@ final class BookCellViewModel {
     }
     
     var title: String {
-        return book.title ?? "Unknown"
+        book.title ?? "Unknown"
     }
     var author: String {
-        return book.author ?? "Unknown"
+        book.author ?? "Unknown"
     }
     var image: String {
-        return book.image ?? ""
+        book.image ?? ""
     }
 }
