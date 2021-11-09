@@ -9,13 +9,13 @@ import UIKit
 
 extension UITableViewCell {
     var selectionColor: UIColor {
+        get {
+            return self.selectedBackgroundView?.backgroundColor ?? UIColor.clear
+        }
         set {
             let view = UIView()
             view.backgroundColor = newValue
             self.selectedBackgroundView = view
-        }
-        get {
-            return self.selectedBackgroundView?.backgroundColor ?? UIColor.clear
         }
     }
 }

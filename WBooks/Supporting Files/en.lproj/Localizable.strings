@@ -6,12 +6,12 @@
   
 */
 
-//MARK: Login
+// MARK: Login
 "usernamePlaceholder" = "Username";
 "passwordPlaceholder" = "Password";
 "signInTitle" = "Sign In";
 
-//MARK: Navigation bar
+// MARK: Navigation bar
 "libraryTitleNavBar" = "Library";
 "bookDetailTitleNavBar" = "Book detail";
 "wishlistTitleNavBar" = "Wishlist";
@@ -19,8 +19,15 @@
 "rentalsTitleNavBar" = "My Rentals";
 "comentsTitleNavBar" = "Coments";
 
-//MARK: Tab bar
+// MARK: Tab bar
 "libraryTitleTabBar" = "Library";
 "wishlistTitleTabBar" = "Wishlist";
 "suggestTitleTabBar" = "Suggest";
 "rentalsTitleTabBar" = "Rentals";
+
+// MARK: Configuration Log File
+"versionLog" = "App Version: {version}";
+"buildVersionLog" = "Build Version: {build}";
+"iosVersionLog" = "iOS Version: {ios_version}";
+"currentDeviceLog" = "Current Device: {current_device}";
+"bundleIdentifierLog" = "Bundle Identifier in the App Store: {bundle_identifier}";

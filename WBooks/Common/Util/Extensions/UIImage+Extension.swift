@@ -19,6 +19,6 @@ enum AssetsImage: String {
 
 extension UIImage {
     static func loadAssets(_ name: AssetsImage) -> UIImage? {
-        return UIImage(named: name.rawValue);
+        return UIImage(named: name.rawValue)
     }
 }

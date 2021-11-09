@@ -5,27 +5,49 @@
 //  Created by leonardo.a.simoza on 28/10/21.
 //
 
-import Foundation
+import RxSwift
+import CocoaLumberjack
 
-public class LibraryViewModel: NSObject {
-    private(set) var bookData: Books! {
-        didSet {
-            self.bindBooks()
-        }
-    }
-    var bindBooks: () -> Void = {}
+protocol LibraryViewModelType {
+    var books: Books { get set }
+    var navBarTitle: String { get }
+    func observableBooks() -> Observable<Books>
+    func createBookCellViewModel(for bookIndex: Int) -> BookCellViewModel
+}
+
+public class LibraryViewModel: NSObject, LibraryViewModelType {
+    
+    // MARK: Properties
+    private let repository: BookRepositoryProtocol
+    internal var books: Books = Books()
+    
     var navBarTitle: String {
         "libraryTitleNavBar".localized()
     }
     
-    func getBooks(completion: @escaping (Result<Books, Error>) -> Void) {
-        Helper.loadDummy { result in
-            switch result {
-            case .success(let books):
-                self.bookData = books
-            case .failure(_):
-                print("Error getting the books")
-            }
+    init(repository: BookRepositoryProtocol = BookRepository()) {
+        self.repository = repository
+    }
+    
+    func createBookCellViewModel(for bookIndex: Int) -> BookCellViewModel {
+        return BookCellViewModel(book: books[bookIndex])
+    }
+    
+    func observableBooks() -> Observable<Books> {
+        return Observable.create { [weak self] observer in
+            self?.repository.fetchBooks(completion: { [weak self] result in
+                switch result {
+                case .success(let books):
+                    print("Books \(books.count)")
+                    self?.books = books
+                    observer.onNext(books)
+                    observer.onCompleted()
+                case .failure(let error):
+                    print("Error Books \(error.get())")
+                    observer.onError(error)
+                }
+            })
+            return Disposables.create()
         }
     }
 }

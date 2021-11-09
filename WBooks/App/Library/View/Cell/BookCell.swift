@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import CocoaLumberjack
+import Kingfisher
+import RxSwift
 
 final class BookCell: UITableViewCell {
-    //MARK: Properties
+    
+    // MARK: Properties
     @IBOutlet weak var cellView: UIView! {
         didSet {
             cellView.layer.cornerRadius = 5
@@ -59,10 +63,9 @@ final class BookCell: UITableViewCell {
     }
     
     // MARK: Custom methods
-    public func configureView(book: Book) {
-        bookTitle.text = book.title
-        bookAuthor.text = book.author
-        guard let imageName = book.image else { return }
-        bookImage.image  = UIImage(named: imageName)
+    public func configureView(viewModel: BookCellViewModel) {
+        bookTitle.text = viewModel.title.isEmpty ? "Unknown" : viewModel.title.capitalized
+        bookAuthor.text = viewModel.author.isEmpty ? "Unknown" : viewModel.author.capitalized
+        bookImage.loadImageRemote(imageUrl: viewModel.image)
     }
 }

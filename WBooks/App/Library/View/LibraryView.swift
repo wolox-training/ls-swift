@@ -8,7 +8,8 @@
 import UIKit
 
 final class LibraryView: BaseNibView {
-    //MARK: Properties
+    
+    // MARK: Properties
     @IBOutlet weak var libraryTable: UITableView!
     
     override init(frame: CGRect) {
@@ -23,6 +24,6 @@ final class LibraryView: BaseNibView {
     func configure() {
         libraryTable.backgroundColor = UIColor.appColor(.accentColor)
         libraryTable.separatorColor = .clear
-        libraryTable.contentInset = UIEdgeInsets(top: 29, left: 0, bottom: 0, right: 0);
+        libraryTable.contentInset = UIEdgeInsets(top: 29, left: 0, bottom: 0, right: 0)
     }
 }

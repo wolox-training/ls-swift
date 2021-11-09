@@ -52,7 +52,8 @@ public class TabBarViewModel: NSObject {
         case 3:
             rootViewController = UIViewController()
         default:
-            rootViewController = LibraryViewController()
+            let viewModel: LibraryViewModelType = LibraryViewModel()
+            rootViewController = LibraryViewController(viewModel: viewModel)
         }
         tabBarItem.tag = item.order
         let viewController = NavigationController(rootViewController: rootViewController)
