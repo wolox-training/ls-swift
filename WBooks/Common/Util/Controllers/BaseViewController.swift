@@ -20,7 +20,7 @@ class BaseViewController: UIViewController {
     
     func initNavigation(title: String, hasBack: Bool) {
         navigationItem.title = title
-        if (hasBack) {
+        if hasBack {
             let backItem = UIBarButtonItem(customView: setIcon(position: 0.0, imageName: .iconBack))
             backItem.customView?.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(backRedirection)))
             navigationItem.leftBarButtonItem = backItem

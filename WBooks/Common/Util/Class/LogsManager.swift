@@ -16,7 +16,7 @@ class LogsManager: NSObject, DDLogFormatter {
         let logFlag: DDLogFlag = logMessage.flag
         let method: String = "\(logMessage.fileName).\(String(describing: logMessage.function!))"
         
-        switch (logFlag) {
+        switch logFlag {
         case .error : logLevel = "ERROR"
         case .warning : logLevel = "WARNING"
         case .info : logLevel = "INFO"

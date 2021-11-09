@@ -9,7 +9,8 @@ import UIKit
 
 class Helper {
     static func loadDummy(completation: ((Result<Books, Error>) -> Void)? = nil) {
-        guard let dummy = Bundle.main.url(forResource: "MockLibrary", withExtension: "json"), let dummyData = try? Data(contentsOf: dummy) else { return }
+        guard let dummy = Bundle.main.url(forResource: "MockLibrary", withExtension: "json"),
+              let dummyData = try? Data(contentsOf: dummy) else { return }
         if let data = try? JSONDecoder().decode(Books.self, from: dummyData) {
             completation!(.success(data))
         } else {

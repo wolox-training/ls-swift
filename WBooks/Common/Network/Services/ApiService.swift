@@ -54,7 +54,7 @@ extension ApiService: TargetType {
         }
     }
     
-    var headers: [String : String]? {
+    var headers: [String: String]? {
         switch self {
         default:
             return ["Content-type": "application/json"]

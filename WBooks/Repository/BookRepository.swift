@@ -23,7 +23,7 @@ internal class BookRepository: BookRepositoryProtocol {
         }.subscribe(onSuccess: { (data) in
             print("JSON: \(data)")
             completion(.success(data))
-        },onFailure: { (error) in
+        }, onFailure: { (error) in
             print("Error: \(error.localizedDescription)")
             let dataError = MoyaError.underlying(error, nil)
             let errorModel = ErrorModel(timestamp: nil, message: dataError.localizedDescription, statusCode: nil)

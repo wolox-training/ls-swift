@@ -30,7 +30,7 @@ extension UILabel: TypographyExtensions {
         }
     }
     
-    fileprivate var attributes: [NSAttributedString.Key : Any]? {
+    fileprivate var attributes: [NSAttributedString.Key: Any]? {
         if let attributedText = attributedText {
             return attributedText.attributes(at: 0, effectiveRange: nil)
         } else {
@@ -85,7 +85,7 @@ extension UILabel: TypographyExtensions {
     
     func letterSpacing(_ value: CGFloat) {
         if let textString = text {
-            let attrs: [NSAttributedString.Key : Any] = [.kern: value]
+            let attrs: [NSAttributedString.Key: Any] = [.kern: value]
             attributedText = NSAttributedString(string: textString, attributes: attrs)
         }
     }
