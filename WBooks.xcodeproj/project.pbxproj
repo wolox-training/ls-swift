@@ -10,9 +10,11 @@
 		1E40EC5727287CC700FBD71F /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40EC5627287CC700FBD71F /* LoginView.swift */; };
 		1E40EC5927287CD900FBD71F /* LoginView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E40EC5827287CD900FBD71F /* LoginView.xib */; };
 		1E40EC5C27287D7700FBD71F /* BaseNibView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E40EC5B27287D7700FBD71F /* BaseNibView.swift */; };
+		1E69A60A2737886400480F12 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E69A6092737886400480F12 /* Environment.swift */; };
 		1E6D3228272C4BDF005993D5 /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6D3227272C4BDF005993D5 /* BookCell.xib */; };
 		1E6D322A272C520C005993D5 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6D3229272C520C005993D5 /* UITableView+Extension.swift */; };
 		1E72E1F9272DE60D0005C824 /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E72E1F8272DE60D0005C824 /* Book.swift */; };
+		1E75BBE12735A5B80030D0E1 /* LogsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E75BBE02735A5B80030D0E1 /* LogsManager.swift */; };
 		1E827E60272BA220003A7E7F /* LibraryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E827E5F272BA220003A7E7F /* LibraryViewController.swift */; };
 		1E827E62272BA22F003A7E7F /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E827E61272BA22F003A7E7F /* LibraryView.swift */; };
 		1E827E64272BA3C4003A7E7F /* LibraryView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E827E63272BA3C4003A7E7F /* LibraryView.xib */; };
@@ -21,6 +23,11 @@
 		1E827E6D272BA803003A7E7F /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E827E6C272BA803003A7E7F /* NavigationController.swift */; };
 		1E827E6F272BAD09003A7E7F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E827E6E272BAD09003A7E7F /* TabBarController.swift */; };
 		1E827E71272BAFFD003A7E7F /* MockLibrary.json in Resources */ = {isa = PBXBuildFile; fileRef = 1E827E70272BAFFD003A7E7F /* MockLibrary.json */; };
+		1E8F7F562738066000F9915A /* ApiError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F7F552738066000F9915A /* ApiError.swift */; };
+		1E8F7F5927380EC400F9915A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F7F5827380EC400F9915A /* ApiManager.swift */; };
+		1E8F7F5B27380F3700F9915A /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F7F5A27380F3700F9915A /* ApiConfig.swift */; };
+		1E8F7F5D2738178200F9915A /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F7F5C2738178200F9915A /* BookCellViewModel.swift */; };
+		1E91697A273A173300D96FA0 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E916979273A173300D96FA0 /* UIImageView+Extension.swift */; };
 		1EA59B2B2728B44200592820 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA59B2A2728B44200592820 /* UIView+Extension.swift */; };
 		1EA59B2D27297C6000592820 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA59B2C27297C6000592820 /* LoginViewModel.swift */; };
 		1EA59B322729A38000592820 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EA59B342729A38000592820 /* Localizable.strings */; };
@@ -48,6 +55,8 @@
 		1EB1516D273217B10058050D /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1516C273217B10058050D /* UIImage+Extension.swift */; };
 		1EB151702733505F0058050D /* TabBarItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1516F2733505F0058050D /* TabBarItem.swift */; };
 		1EB15172273352E10058050D /* TabBarViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB15171273352E10058050D /* TabBarViewModel.swift */; };
+		1EB1517A2734414B0058050D /* BookRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB151792734414B0058050D /* BookRepository.swift */; };
+		1EB1517C273442800058050D /* ApiService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1517B273442800058050D /* ApiService.swift */; };
 		1EC4BB35272380BB00F1A058 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4BB34272380BB00F1A058 /* AppDelegate.swift */; };
 		1EC4BB37272380BB00F1A058 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4BB36272380BB00F1A058 /* SceneDelegate.swift */; };
 		1EC4BB39272380BB00F1A058 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EC4BB38272380BB00F1A058 /* LoginViewController.swift */; };
@@ -85,9 +94,11 @@
 		1E5D9FAA2726FFD7001CEA71 /* BaseConfig.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = BaseConfig.xcconfig; sourceTree = "<group>"; };
 		1E5D9FAB2726FFEA001CEA71 /* ConfigDev.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigDev.xcconfig; sourceTree = "<group>"; };
 		1E5D9FAC27270004001CEA71 /* ConfigProd.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = ConfigProd.xcconfig; sourceTree = "<group>"; };
+		1E69A6092737886400480F12 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		1E6D3227272C4BDF005993D5 /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
 		1E6D3229272C520C005993D5 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
 		1E72E1F8272DE60D0005C824 /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
+		1E75BBE02735A5B80030D0E1 /* LogsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogsManager.swift; sourceTree = "<group>"; };
 		1E827E5F272BA220003A7E7F /* LibraryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewController.swift; sourceTree = "<group>"; };
 		1E827E61272BA22F003A7E7F /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
 		1E827E63272BA3C4003A7E7F /* LibraryView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = LibraryView.xib; sourceTree = "<group>"; };
@@ -96,6 +107,11 @@
 		1E827E6C272BA803003A7E7F /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		1E827E6E272BAD09003A7E7F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		1E827E70272BAFFD003A7E7F /* MockLibrary.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = MockLibrary.json; sourceTree = "<group>"; };
+		1E8F7F552738066000F9915A /* ApiError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiError.swift; sourceTree = "<group>"; };
+		1E8F7F5827380EC400F9915A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
+		1E8F7F5A27380F3700F9915A /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
+		1E8F7F5C2738178200F9915A /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
+		1E916979273A173300D96FA0 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		1EA59B2A2728B44200592820 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1EA59B2C27297C6000592820 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1EA59B332729A38000592820 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -124,6 +140,8 @@
 		1EB1516C273217B10058050D /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		1EB1516F2733505F0058050D /* TabBarItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarItem.swift; sourceTree = "<group>"; };
 		1EB15171273352E10058050D /* TabBarViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewModel.swift; sourceTree = "<group>"; };
+		1EB151792734414B0058050D /* BookRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookRepository.swift; sourceTree = "<group>"; };
+		1EB1517B273442800058050D /* ApiService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiService.swift; sourceTree = "<group>"; };
 		1EC4BB31272380BB00F1A058 /* WBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1EC4BB34272380BB00F1A058 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1EC4BB36272380BB00F1A058 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -183,6 +201,7 @@
 				1E40EC5D27287DAC00FBD71F /* Extensions */,
 				1E40EC5A27287D6000FBD71F /* Class */,
 				1EB1516527319AC40058050D /* GlobalConstants.swift */,
+				1E69A6092737886400480F12 /* Environment.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -200,6 +219,7 @@
 			isa = PBXGroup;
 			children = (
 				1E40EC5B27287D7700FBD71F /* BaseNibView.swift */,
+				1E75BBE02735A5B80030D0E1 /* LogsManager.swift */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -216,6 +236,7 @@
 				1EB1516727319E340058050D /* UILabel+Extension.swift */,
 				1EB1516927319EA00058050D /* UITableViewCell+Extension.swift */,
 				1EB1516C273217B10058050D /* UIImage+Extension.swift */,
+				1E916979273A173300D96FA0 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -277,6 +298,25 @@
 			path = Navigation;
 			sourceTree = "<group>";
 		};
+		1E8F7F542738063A00F9915A /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				1E8F7F5A27380F3700F9915A /* ApiConfig.swift */,
+				1E8F7F552738066000F9915A /* ApiError.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		1E8F7F572738077000F9915A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				1E8F7F542738063A00F9915A /* Models */,
+				1EB151782734411C0058050D /* Services */,
+				1E8F7F5827380EC400F9915A /* ApiManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		1EA59B2E2729A21700592820 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +329,7 @@
 		1EA59B362729A40F00592820 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				1E8F7F572738077000F9915A /* Network */,
 				1E827E6B272BA7F0003A7E7F /* Navigation */,
 				1E40EC5427287C6000FBD71F /* Util */,
 			);
@@ -308,6 +349,7 @@
 			children = (
 				1E827E65272BA6D7003A7E7F /* BookCell.swift */,
 				1E6D3227272C4BDF005993D5 /* BookCell.xib */,
+				1E8F7F5C2738178200F9915A /* BookCellViewModel.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -442,6 +484,22 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		1EB15177273440FF0058050D /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				1EB151792734414B0058050D /* BookRepository.swift */,
+			);
+			path = Repository;
+			sourceTree = "<group>";
+		};
+		1EB151782734411C0058050D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				1EB1517B273442800058050D /* ApiService.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		1EC4BB28272380BB00F1A058 = {
 			isa = PBXGroup;
 			children = (
@@ -470,6 +528,7 @@
 				1E5D9FA72726F0C0001CEA71 /* App */,
 				1EA59B362729A40F00592820 /* Common */,
 				1E5D9FA82726F2AD001CEA71 /* ConfigurationFiles */,
+				1EB15177273440FF0058050D /* Repository */,
 				1E5D9FA92726FD01001CEA71 /* Resources */,
 				1EA59B2E2729A21700592820 /* Supporting Files */,
 				1EC4BB3F272380BE00F1A058 /* LaunchScreen.storyboard */,
@@ -530,6 +589,7 @@
 				1EC4BB2E272380BB00F1A058 /* Frameworks */,
 				1EC4BB2F272380BB00F1A058 /* Resources */,
 				6372E9452B99FA04403EAE0B /* [CP] Embed Pods Frameworks */,
+				1EB1517D27357EB20058050D /* Lint */,
 			);
 			buildRules = (
 			);
@@ -667,6 +727,24 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		1EB1517D27357EB20058050D /* Lint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = Lint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "if which swiftlint >/dev/null; then\n  swiftlint lint --config \"${PROJECT_DIR}/.swiftlint.yml\"\nelse\n  echo \"warning: SwiftLint not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
 		24220971E0CC09CB5BD7769F /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -780,13 +858,17 @@
 				1EA59B2B2728B44200592820 /* UIView+Extension.swift in Sources */,
 				1EB1516827319E340058050D /* UILabel+Extension.swift in Sources */,
 				1EA59B3F272A1F0600592820 /* BaseViewController.swift in Sources */,
+				1E69A60A2737886400480F12 /* Environment.swift in Sources */,
 				1EC4BB39272380BB00F1A058 /* LoginViewController.swift in Sources */,
 				1EA59B3A2729CEE600592820 /* UIColor+Extension.swift in Sources */,
+				1E75BBE12735A5B80030D0E1 /* LogsManager.swift in Sources */,
 				1E827E6A272BA7E1003A7E7F /* LibraryViewModel.swift in Sources */,
 				1E827E6F272BAD09003A7E7F /* TabBarController.swift in Sources */,
 				1EB1514027316A460058050D /* Helper.swift in Sources */,
+				1E8F7F562738066000F9915A /* ApiError.swift in Sources */,
 				1E827E62272BA22F003A7E7F /* LibraryView.swift in Sources */,
 				1EC4BB35272380BB00F1A058 /* AppDelegate.swift in Sources */,
+				1EB1517C273442800058050D /* ApiService.swift in Sources */,
 				1E40EC5C27287D7700FBD71F /* BaseNibView.swift in Sources */,
 				1E827E6D272BA803003A7E7F /* NavigationController.swift in Sources */,
 				1E72E1F9272DE60D0005C824 /* Book.swift in Sources */,
@@ -794,12 +876,17 @@
 				1E40EC5727287CC700FBD71F /* LoginView.swift in Sources */,
 				1EB1516627319AC40058050D /* GlobalConstants.swift in Sources */,
 				1EB15172273352E10058050D /* TabBarViewModel.swift in Sources */,
+				1E8F7F5B27380F3700F9915A /* ApiConfig.swift in Sources */,
 				1EC4BB37272380BB00F1A058 /* SceneDelegate.swift in Sources */,
 				1EB1516A27319EA00058050D /* UITableViewCell+Extension.swift in Sources */,
 				1E827E66272BA6D7003A7E7F /* BookCell.swift in Sources */,
 				1EB151702733505F0058050D /* TabBarItem.swift in Sources */,
+				1E8F7F5927380EC400F9915A /* ApiManager.swift in Sources */,
+				1E91697A273A173300D96FA0 /* UIImageView+Extension.swift in Sources */,
 				1EA59B3C272A1E7A00592820 /* UIViewController+Extension.swift in Sources */,
 				1E827E60272BA220003A7E7F /* LibraryViewController.swift in Sources */,
+				1EB1517A2734414B0058050D /* BookRepository.swift in Sources */,
+				1E8F7F5D2738178200F9915A /* BookCellViewModel.swift in Sources */,
 				1EA59B2D27297C6000592820 /* LoginViewModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -987,6 +1074,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				DONT_GENERATE_INFOPLIST_FILE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WBooks/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
@@ -1017,6 +1105,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = "";
+				DONT_GENERATE_INFOPLIST_FILE = NO;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "WBooks/Supporting Files/Info.plist";
 				INFOPLIST_KEY_CFBundleDisplayName = "$(APP_NAME)";
