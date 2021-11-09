@@ -14,7 +14,8 @@ protocol BookRepositoryProtocol {
 }
 
 internal class BookRepository: BookRepositoryProtocol {
-
+    
+    // MARK: API calls
     func fetchBooks(completion: @escaping (Result<Books, ApiError>) -> Void) {
         provider.rx.request(.books).flatMap { (response) -> Single<Books> in
             let books = try response.map(Books.self)
@@ -23,7 +24,6 @@ internal class BookRepository: BookRepositoryProtocol {
             print("JSON: \(data)")
             completion(.success(data))
         },onFailure: { (error) in
-            
             print("Error: \(error.localizedDescription)")
             let dataError = MoyaError.underlying(error, nil)
             let errorModel = ErrorModel(timestamp: nil, message: dataError.localizedDescription, statusCode: nil)
