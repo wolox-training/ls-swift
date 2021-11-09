@@ -10,18 +10,19 @@ import Foundation
 import Moya
 
 protocol ApiProtocol {
-    associatedtype T: TargetType
-    var provider: MoyaProvider<T> { get }
+    associatedtype ApiServices: TargetType
+    var provider: MoyaProvider<ApiServices> { get }
     var endpoint: String { get }
     var apiVersion: String { get }
 }
 
 class ApiManager: ApiProtocol {
     
-    typealias T = ApiService
-    let logger = NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration(logOptions: [.formatRequestAscURL, .errorResponseBody]))
-
-    let provider = MoyaProvider<ApiService>(plugins: [NetworkLoggerPlugin(configuration: NetworkLoggerPlugin.Configuration(logOptions: [.formatRequestAscURL, .errorResponseBody]))])
+    typealias ApiServices = ApiService
+    let provider = MoyaProvider<ApiServices>(
+        plugins: [NetworkLoggerPlugin(
+            configuration: NetworkLoggerPlugin.Configuration(
+                logOptions: [.formatRequestAscURL, .errorResponseBody]))])
     let endpoint: String
     let apiVersion: String
     
