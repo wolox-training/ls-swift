@@ -25,7 +25,8 @@ public enum Environment {
     
     // MARK: - Plist Values
     static let baseUrl: URL = {
-        guard let parameters = Environment.infoDictionary[Keys.parameters] as? [String: String], let baseURLstring = parameters[Keys.baseURL] else {
+        guard let parameters = Environment.infoDictionary[Keys.parameters] as? [String: String],
+              let baseURLstring = parameters[Keys.baseURL] else {
             fatalError("Base URL not set in plist for this environment")
         }
         guard let url = URL(string: baseURLstring) else {
