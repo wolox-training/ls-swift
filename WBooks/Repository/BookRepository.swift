@@ -21,10 +21,10 @@ internal class BookRepository: BookRepositoryProtocol {
             let books = try response.map(Books.self)
             return Single.just(books)
         }.subscribe(onSuccess: { (data) in
-            print("JSON: \(data)")
+            DDLogDebug("JSON: \(data)")
             completion(.success(data))
         }, onFailure: { (error) in
-            print("Error: \(error.localizedDescription)")
+            DDLogError("Error: \(error.localizedDescription)")
             let dataError = MoyaError.underlying(error, nil)
             let errorModel = ErrorModel(timestamp: nil, message: dataError.localizedDescription, statusCode: nil)
             completion(.failure(.apiError(errorModel)))

@@ -66,6 +66,21 @@ final class BookCell: UITableViewCell {
     public func configureView(viewModel: BookCellViewModel) {
         bookTitle.text = viewModel.title.isEmpty ? "Unknown" : viewModel.title.capitalized
         bookAuthor.text = viewModel.author.isEmpty ? "Unknown" : viewModel.author.capitalized
-        bookImage.loadImageRemote(imageUrl: viewModel.image)
+        let imageUrl = URL(string: viewModel.image)
+        bookImage.kf.setImage(
+            with: imageUrl,
+            placeholder: UIImage(named: "Cover6"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ]) { result in
+            switch result {
+            case .success(let value):
+                DDLogDebug("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                DDLogDebug("Job failed: \(error.localizedDescription)")
+            }
+        }
     }
 }

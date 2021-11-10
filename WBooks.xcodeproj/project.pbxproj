@@ -27,7 +27,6 @@
 		1E8F7F5927380EC400F9915A /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F7F5827380EC400F9915A /* ApiManager.swift */; };
 		1E8F7F5B27380F3700F9915A /* ApiConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F7F5A27380F3700F9915A /* ApiConfig.swift */; };
 		1E8F7F5D2738178200F9915A /* BookCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E8F7F5C2738178200F9915A /* BookCellViewModel.swift */; };
-		1E91697A273A173300D96FA0 /* UIImageView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E916979273A173300D96FA0 /* UIImageView+Extension.swift */; };
 		1EA59B2B2728B44200592820 /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA59B2A2728B44200592820 /* UIView+Extension.swift */; };
 		1EA59B2D27297C6000592820 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA59B2C27297C6000592820 /* LoginViewModel.swift */; };
 		1EA59B322729A38000592820 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1EA59B342729A38000592820 /* Localizable.strings */; };
@@ -111,7 +110,6 @@
 		1E8F7F5827380EC400F9915A /* ApiManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
 		1E8F7F5A27380F3700F9915A /* ApiConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiConfig.swift; sourceTree = "<group>"; };
 		1E8F7F5C2738178200F9915A /* BookCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookCellViewModel.swift; sourceTree = "<group>"; };
-		1E916979273A173300D96FA0 /* UIImageView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extension.swift"; sourceTree = "<group>"; };
 		1EA59B2A2728B44200592820 /* UIView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		1EA59B2C27297C6000592820 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		1EA59B332729A38000592820 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 				1EB1516727319E340058050D /* UILabel+Extension.swift */,
 				1EB1516927319EA00058050D /* UITableViewCell+Extension.swift */,
 				1EB1516C273217B10058050D /* UIImage+Extension.swift */,
-				1E916979273A173300D96FA0 /* UIImageView+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -882,7 +879,6 @@
 				1E827E66272BA6D7003A7E7F /* BookCell.swift in Sources */,
 				1EB151702733505F0058050D /* TabBarItem.swift in Sources */,
 				1E8F7F5927380EC400F9915A /* ApiManager.swift in Sources */,
-				1E91697A273A173300D96FA0 /* UIImageView+Extension.swift in Sources */,
 				1EA59B3C272A1E7A00592820 /* UIViewController+Extension.swift in Sources */,
 				1E827E60272BA220003A7E7F /* LibraryViewController.swift in Sources */,
 				1EB1517A2734414B0058050D /* BookRepository.swift in Sources */,
