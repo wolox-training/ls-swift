@@ -55,15 +55,15 @@ final class LibraryViewController: BaseViewController, UIScrollViewDelegate {
     }
 }
 
-extension LibraryViewController {
+private extension LibraryViewController {
     
     // MARK: Custom methods
-    private func setupTableView() {
+    func setupTableView() {
         libraryView.libraryTable.register(BookCell.self)
         libraryView.libraryTable.rowHeight = Helper.sizeBy(height: 100).screenHeight
     }
     
-    private func loadLibrary() {
+    func loadLibrary() {
         libraryView.libraryTable.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
