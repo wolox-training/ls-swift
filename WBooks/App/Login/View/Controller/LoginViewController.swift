@@ -9,11 +9,11 @@ import UIKit
 
 final class LoginViewController: BaseViewController {
 
-    //MARK: - Variables
+    // MARK: - Variables
     private lazy var loginView: LoginView = LoginView()
     private let loginViewModel: LoginViewModel = LoginViewModel()
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         loginView.configure(loginViewModel)
@@ -49,7 +49,7 @@ final class LoginViewController: BaseViewController {
         NotificationCenter.default.removeObserver(self, name: UIResponder.keyboardWillHideNotification, object: nil)
     }
     
-    //MARK: Actions
+    // MARK: Actions
     @objc private func signInTapped() {
         print("WELCOME User: \(String(describing: loginView.usernameTextField.text!))")
         let tabBarController = TabBarController()
@@ -63,7 +63,7 @@ final class LoginViewController: BaseViewController {
 
 extension LoginViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        //Check if there is any other text-field in the view whose tag is +1 greater than the current text-field on which the return key was pressed. If yes → then move the cursor to that next text-field. If No → Dismiss the keyboard
+        // Check if there is any other text-field in the view whose tag is +1 greater than the current text-field on which the return key was pressed. If yes → then move the cursor to that next text-field. If No → Dismiss the keyboard
         if let nextField = self.view.viewWithTag(textField.tag + 1) as? UITextField {
             nextField.becomeFirstResponder()
         } else {
@@ -76,15 +76,16 @@ extension LoginViewController: UITextFieldDelegate {
 extension LoginViewController {
     @objc func keyboardWillShow(notification: NSNotification) {
         guard let userInfo = notification.userInfo else { return }
-        var keyboardFrame:CGRect = (userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as! NSValue).cgRectValue
+        guard let frame = userInfo[UIResponder.keyboardFrameBeginUserInfoKey] as? NSValue else { return }
+        var keyboardFrame: CGRect = frame.cgRectValue
         keyboardFrame = self.view.convert(keyboardFrame, from: nil)
-        var contentInset:UIEdgeInsets = loginView.scrollView.contentInset
+        var contentInset: UIEdgeInsets = loginView.scrollView.contentInset
         contentInset.bottom = keyboardFrame.size.height + 20
         loginView.scrollView.contentInset = contentInset
     }
     
     @objc func keyboardWillHide(notification: NSNotification) {
-        let contentInset:UIEdgeInsets = UIEdgeInsets.zero
+        let contentInset: UIEdgeInsets = UIEdgeInsets.zero
         loginView.scrollView.contentInset = contentInset
     }
 }

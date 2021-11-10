@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import CocoaLumberjack
+import Kingfisher
+import RxSwift
 
 final class BookCell: UITableViewCell {
-    //MARK: Properties
+    
+    // MARK: Properties
     @IBOutlet weak var cellView: UIView! {
         didSet {
             cellView.layer.cornerRadius = 5
@@ -59,10 +63,24 @@ final class BookCell: UITableViewCell {
     }
     
     // MARK: Custom methods
-    public func configureView(book: Book) {
-        bookTitle.text = book.title
-        bookAuthor.text = book.author
-        guard let imageName = book.image else { return }
-        bookImage.image  = UIImage(named: imageName)
+    public func configureView(viewModel: BookCellViewModel) {
+        bookTitle.text = viewModel.title.isEmpty ? "Unknown" : viewModel.title.capitalized
+        bookAuthor.text = viewModel.author.isEmpty ? "Unknown" : viewModel.author.capitalized
+        let imageUrl = URL(string: viewModel.image)
+        bookImage.kf.setImage(
+            with: imageUrl,
+            placeholder: UIImage(named: "Cover6"),
+            options: [
+                .scaleFactor(UIScreen.main.scale),
+                .transition(.fade(1)),
+                .cacheOriginalImage
+            ]) { result in
+            switch result {
+            case .success(let value):
+                DDLogDebug("Task done for: \(value.source.url?.absoluteString ?? "")")
+            case .failure(let error):
+                DDLogDebug("Job failed: \(error.localizedDescription)")
+            }
+        }
     }
 }

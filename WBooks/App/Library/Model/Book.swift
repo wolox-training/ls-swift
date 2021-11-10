@@ -11,7 +11,7 @@ typealias Books = [Book]
 
 // MARK: - Book
 struct Book: Codable, Hashable {
-    let image,
+    var image,
         title,
         author: String?
     let id: Int?

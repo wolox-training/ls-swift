@@ -9,17 +9,17 @@ import UIKit
 
 final class TabBarController: UITabBarController {
     
-    //MARK: Properties
+    // MARK: Properties
     var viewModel = TabBarViewModel()
     
-    //MARK: Lifecycle
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         configure()
         viewControllers = viewModel.getViewControllers()
     }
     
-    //MARK: Custom methods
+    // MARK: Custom methods
     private func configure() {
         tabBar.isTranslucent = false
         tabBar.barTintColor = .white

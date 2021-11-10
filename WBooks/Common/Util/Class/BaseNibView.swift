@@ -9,7 +9,7 @@ import UIKit
 
 class BaseNibView: UIView, NibLoadeable {
     
-    //MARK: - Initializer
+    // MARK: - Initializer
     override init(frame: CGRect) {
         super.init(frame: frame)
         loadNibContent()

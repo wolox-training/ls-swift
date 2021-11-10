@@ -9,7 +9,7 @@ import UIKit
 
 final class LoginView: BaseNibView {
     
-    //MARK: Properties
+    // MARK: Properties
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var usernameTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
@@ -17,7 +17,7 @@ final class LoginView: BaseNibView {
 }
 
 extension LoginView {
-    //MARK: Setup
+    // MARK: Setup
     public func configure(_ viewModel: LoginViewModel) {
         usernameTextField.placeholder = viewModel.usernamePlaceholder
         passwordTextField.placeholder = viewModel.passwordPlaceholder

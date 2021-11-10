@@ -6,35 +6,36 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
+import CocoaLumberjack
 
-final class LibraryViewController: BaseViewController {
-    //MARK: Properties
-    private lazy var libraryView = LibraryView()
-    private var viewModel = LibraryViewModel()
+final class LibraryViewController: BaseViewController, UIScrollViewDelegate {
     
-    //MARK: Lifecycle
+    // MARK: Properties
+    private lazy var libraryView = LibraryView()
+    private var viewModel: LibraryViewModelType
+    private var loadingView: UIActivityIndicatorView!
+    
+    init(viewModel: LibraryViewModelType) {
+        self.viewModel = viewModel
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        setupTable()
+        setupTableView()
         loadLibrary()
         configureNavigation()
     }
     
     override func loadView() {
         view = libraryView
-    }
-    
-    func loadLibrary() {
-        viewModel.getBooks { result in
-            switch result {
-            case .success(_):
-                self.viewModel.bindBooks = {
-                    self.libraryView.libraryTable.reloadData()
-                }
-            case .failure(_):
-                print("failure")
-            }
-        }
     }
     
     func configureNavigation() {
@@ -46,40 +47,32 @@ final class LibraryViewController: BaseViewController {
     }
     
     @objc func activeSearch() {
-        print("Active search")
+        DDLogInfo("Active search")
     }
     
     @objc func redirectNotificaion() {
-        print("Redirect notification")
+        DDLogInfo("Redirect notification")
     }
 }
 
-extension LibraryViewController: UITableViewDelegate, UITableViewDataSource {
-    func setupTable() {
-        libraryView.libraryTable.delegate = self
-        libraryView.libraryTable.dataSource = self
+private extension LibraryViewController {
+    
+    // MARK: Custom methods
+    func setupTableView() {
+        libraryView.libraryTable.register(BookCell.self)
+        libraryView.libraryTable.rowHeight = Helper.sizeBy(height: 100).screenHeight
     }
     
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.bookData.count
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return Helper.sizeBy(height: 100).screenHeight
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.register(BookCell.self, indexPath: indexPath)
-        cell.configureView(book: viewModel.bookData[indexPath.row])
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        libraryView.libraryTable.cellForRow(at: indexPath)?.backgroundColor = UIColor.appColor(.secondaryColor)?.withAlphaComponent(0.3)
-        print("Redirect to detail view")
-    }
-    
-    func tableView(_ tableView: UITableView, didDeselectRowAt indexPath: IndexPath) {
-        libraryView.libraryTable.cellForRow(at: indexPath)?.backgroundColor = .clear
+    func loadLibrary() {
+        libraryView.libraryTable.rx.setDelegate(self)
+            .disposed(by: disposeBag)
+        
+        viewModel.observableBooks()
+            .subscribe(on: MainScheduler.instance)
+            .bind(to: libraryView.libraryTable.rx.items(cellIdentifier: "BookCell", cellType: BookCell.self)) { (row, _, cell) in
+                // Configure the cell
+                let bookCellViewModel = self.viewModel.createBookCellViewModel(for: row)
+                cell.configureView(viewModel: bookCellViewModel)
+            }.disposed(by: disposeBag)
     }
 }
