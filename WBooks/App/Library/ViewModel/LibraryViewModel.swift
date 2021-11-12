@@ -13,6 +13,7 @@ protocol LibraryViewModelType {
     var navBarTitle: String { get }
     func observableBooks() -> Observable<Books>
     func createBookCellViewModel(for bookIndex: Int) -> BookCellViewModel
+    func createBookDetailViewModel(book: Book) -> BookDetailViewModel
 }
 
 public class LibraryViewModel: NSObject, LibraryViewModelType {
@@ -31,6 +32,10 @@ public class LibraryViewModel: NSObject, LibraryViewModelType {
     
     func createBookCellViewModel(for bookIndex: Int) -> BookCellViewModel {
         return BookCellViewModel(book: books[bookIndex])
+    }
+    
+    func createBookDetailViewModel(book: Book) -> BookDetailViewModel {
+        return BookDetailViewModel(book: book)
     }
     
     func observableBooks() -> Observable<Books> {

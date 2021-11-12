@@ -14,6 +14,13 @@ enum AssetsColor: String {
     case titleColor = "TitleColor"
     case accentColor = "AccentColor"
     case shadowBoxColor = "ShadowBoxColor"
+    case availableColor = "AvailableColor"
+    case unavailableColor = "UnavailableColor"
+    case gradientB1 = "GradientB1"
+    case gradientB2 = "GradientB2"
+    case gradientBD1 = "GradientBD1"
+    case gradientBD2 = "GradientBD2"
+    case gradientBD3 = "GradientBD3"
 }
 
 extension UIColor {

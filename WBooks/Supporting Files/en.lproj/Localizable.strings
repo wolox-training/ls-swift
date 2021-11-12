@@ -31,3 +31,9 @@
 "iosVersionLog" = "iOS Version: {ios_version}";
 "currentDeviceLog" = "Current Device: {current_device}";
 "bundleIdentifierLog" = "Bundle Identifier in the App Store: {bundle_identifier}";
+
+// MARK: Book Detail - Infographic
+"addToWishlistButton" = "ADD TO WISHLIST";
+"rentButton" = "RENT";
+"available" = "Available";
+"unavailable" = "Not available";
