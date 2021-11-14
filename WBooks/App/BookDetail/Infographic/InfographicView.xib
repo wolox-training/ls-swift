@@ -78,8 +78,7 @@
                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="bk8-4k-SP0">
                             <rect key="frame" x="30" y="15" width="80" height="120"/>
                             <constraints>
-                                <constraint firstAttribute="width" relation="lessThanOrEqual" constant="90" id="9Cf-Wv-QQl"/>
-                                <constraint firstAttribute="width" secondItem="bk8-4k-SP0" secondAttribute="height" multiplier="2:3" id="Kma-Oh-rth"/>
+                                <constraint firstAttribute="width" secondItem="bk8-4k-SP0" secondAttribute="height" multiplier="2:3" id="6Hz-bf-1iW"/>
                             </constraints>
                         </imageView>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xb0-B8-kV9">
@@ -103,21 +102,19 @@
                         <constraint firstAttribute="trailing" secondItem="QFB-6n-rsr" secondAttribute="trailing" constant="30" id="C4L-bD-GkZ"/>
                         <constraint firstItem="QFB-6n-rsr" firstAttribute="leading" secondItem="bk8-4k-SP0" secondAttribute="trailing" constant="10" id="J2F-Jr-bKt"/>
                         <constraint firstAttribute="trailing" secondItem="gkc-vm-dZP" secondAttribute="trailing" constant="30" id="JDj-7T-3vd"/>
+                        <constraint firstItem="bk8-4k-SP0" firstAttribute="top" secondItem="gkc-vm-dZP" secondAttribute="top" id="LfF-30-3KZ"/>
                         <constraint firstItem="bk8-4k-SP0" firstAttribute="top" secondItem="ZLb-gG-s7b" secondAttribute="top" constant="15" id="Ncp-dB-Urr"/>
                         <constraint firstItem="xb0-B8-kV9" firstAttribute="leading" secondItem="zg8-9A-S8D" secondAttribute="leading" id="Q8m-4k-QWP"/>
-                        <constraint firstItem="xb0-B8-kV9" firstAttribute="top" secondItem="bk8-4k-SP0" secondAttribute="bottom" constant="15" id="TDd-OW-KNA"/>
                         <constraint firstItem="xb0-B8-kV9" firstAttribute="trailing" secondItem="zg8-9A-S8D" secondAttribute="trailing" id="WgS-BJ-wG8"/>
                         <constraint firstAttribute="bottom" secondItem="zg8-9A-S8D" secondAttribute="bottom" constant="22" id="YKh-4F-lGz"/>
                         <constraint firstItem="gkc-vm-dZP" firstAttribute="leading" secondItem="bk8-4k-SP0" secondAttribute="trailing" constant="10" id="a7l-AG-oXM"/>
-                        <constraint firstItem="bk8-4k-SP0" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="ZLb-gG-s7b" secondAttribute="leading" constant="20" id="aIL-0s-Ppj"/>
+                        <constraint firstItem="bk8-4k-SP0" firstAttribute="height" secondItem="ZLb-gG-s7b" secondAttribute="height" multiplier="0.444444" id="ebo-IL-jnS"/>
                         <constraint firstItem="QFB-6n-rsr" firstAttribute="top" secondItem="gkc-vm-dZP" secondAttribute="bottom" id="gHX-uy-X27"/>
-                        <constraint firstItem="bk8-4k-SP0" firstAttribute="leading" relation="lessThanOrEqual" secondItem="ZLb-gG-s7b" secondAttribute="leading" constant="30" id="jSi-CC-pGb"/>
                         <constraint firstItem="zg8-9A-S8D" firstAttribute="width" secondItem="xb0-B8-kV9" secondAttribute="width" id="pjO-OJ-lRD"/>
                         <constraint firstItem="QFB-6n-rsr" firstAttribute="leading" secondItem="gkc-vm-dZP" secondAttribute="leading" id="qWR-y2-Q62"/>
                         <constraint firstItem="gkc-vm-dZP" firstAttribute="top" secondItem="ZLb-gG-s7b" secondAttribute="top" constant="15" id="spX-4g-TFq"/>
                         <constraint firstItem="zg8-9A-S8D" firstAttribute="top" secondItem="xb0-B8-kV9" secondAttribute="bottom" constant="10" id="uIn-tx-pdl"/>
                         <constraint firstItem="zg8-9A-S8D" firstAttribute="height" secondItem="xb0-B8-kV9" secondAttribute="height" id="vSZ-ph-bUi"/>
-                        <constraint firstItem="bk8-4k-SP0" firstAttribute="centerY" secondItem="ZLb-gG-s7b" secondAttribute="centerY" constant="-60" id="yrL-bV-cVH"/>
                     </constraints>
                 </view>
             </subviews>

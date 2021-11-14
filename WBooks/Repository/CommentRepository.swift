@@ -1,23 +1,23 @@
 //
-//  BookRepository.swift
+//  CommentRepository.swift
 //  WBooks
 //
-//  Created by leonardo.a.simoza on 4/11/21.
+//  Created by leonardo.a.simoza on 12/11/21.
 //
 
 import RxSwift
 import Moya
 import CocoaLumberjack
 
-protocol BookRepositoryProtocol {
-    func fetchBooks(completion: @escaping (Result<Books, ApiError>) -> Void)
+protocol CommentRepositoryProtocol {
+    func fetchComments(bookId: Int, completion: @escaping (Result<Comments, ApiError>) -> Void)
 }
 
-internal class BookRepository: BookRepositoryProtocol {
+internal class CommentRepository: CommentRepositoryProtocol {
     
     // MARK: API calls
-    func fetchBooks(completion: @escaping (Result<Books, ApiError>) -> Void) {
-        provider.rx.request(.books).flatMap { (response) -> Single<Books> in
+    func fetchComments(bookId: Int, completion: @escaping (Result<Comments, ApiError>) -> Void) {
+        provider.rx.request(.commentsById(bookId: bookId)).flatMap { (response) -> Single<Comments> in
             guard let httpResponse = response.response,
                       httpResponse.statusCode == 200 else {
                           switch response.statusCode {
@@ -35,9 +35,8 @@ internal class BookRepository: BookRepositoryProtocol {
                               throw ApiError.apiError(reason: "Server error")
                           }
                       }
-            
-            let books = try response.map(Books.self)
-            return Single.just(books)
+            let comments = try response.map(Comments.self)
+            return Single.just(comments)
         }.subscribe(onSuccess: { (data) in
             DDLogDebug("JSON: \(data)")
             completion(.success(data))

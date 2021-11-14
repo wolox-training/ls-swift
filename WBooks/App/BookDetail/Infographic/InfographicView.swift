@@ -12,9 +12,7 @@ final class InfographicView: BaseNibView {
     
     // MARK: Properties
     @IBOutlet var viewContainer: UIView! {
-        didSet {
-            viewContainer.backgroundColor = UIColor.appColor(.accentColor)
-        }
+        didSet { viewContainer.backgroundColor = UIColor.appColor(.accentColor) }
     }
     @IBOutlet weak var infograficView: UIView! {
         didSet {
@@ -52,24 +50,16 @@ final class InfographicView: BaseNibView {
         }
     }
     @IBOutlet weak var bookAuthorLabel: UILabel! {
-        didSet {
-            setDefaultStyle(bookAuthorLabel)
-        }
+        didSet { setDefaultStyle(bookAuthorLabel) }
     }
     @IBOutlet weak var bookYearLabel: UILabel! {
-        didSet {
-            setDefaultStyle(bookYearLabel)
-        }
+        didSet { setDefaultStyle(bookYearLabel) }
     }
     @IBOutlet weak var bookGenreLabel: UILabel! {
-        didSet {
-            setDefaultStyle(bookGenreLabel)
-        }
+        didSet { setDefaultStyle(bookGenreLabel) }
     }
     @IBOutlet weak var addToWishlistButton: UIButton! {
-        didSet {
-            addToWishlistButton.setStyle(.transparent)
-        }
+        didSet { addToWishlistButton.setStyle(.transparent) }
     }
     @IBOutlet weak var rentButton: UIButton!
     

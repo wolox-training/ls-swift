@@ -5,11 +5,20 @@
 //  Created by leonardo.a.simoza on 11/11/21.
 //
 
-import Foundation
+import UIKit
 
 // MARK: - User
 struct User: Codable {
-    let username: String
     let id: Int
-    let image: String
+    let username,
+        password,
+        image,
+        createdAt,
+        updatedAt: String
+
+    enum CodingKeys: String, CodingKey {
+        case id, username, password, image
+        case createdAt = "created_at"
+        case updatedAt = "updated_at"
+    }
 }

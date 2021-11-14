@@ -43,12 +43,12 @@ public class LibraryViewModel: NSObject, LibraryViewModelType {
             self?.repository.fetchBooks(completion: { [weak self] result in
                 switch result {
                 case .success(let books):
-                    print("Books \(books.count)")
+                    DDLogDebug("Books \(books.count)")
                     self?.books = books
                     observer.onNext(books)
                     observer.onCompleted()
                 case .failure(let error):
-                    print("Error Books \(error.get())")
+                    DDLogError("Error getting Books \(error.localizedDescription)")
                     observer.onError(error)
                 }
             })
