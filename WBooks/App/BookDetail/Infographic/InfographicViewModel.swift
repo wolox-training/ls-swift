@@ -9,10 +9,11 @@ protocol InfographicViewModelType {
     var image: String { get }
     var title: String { get }
     var status: BookStatus { get }
+    var statusValue: String { get }
+    var statusColor: AssetsColor { get }
     var author: String { get }
     var year: String { get }
     var genre: String { get }
-    func availability(_ bookStatus: BookStatus) -> String
 }
 
 public class InfographicViewModel: InfographicViewModelType {
@@ -33,6 +34,12 @@ public class InfographicViewModel: InfographicViewModelType {
     var status: BookStatus {
         book.status
     }
+    var statusValue: String {
+        isBookAvailable ? "available".localized() : "unavailable".localized()
+    }
+    var statusColor: AssetsColor {
+        isBookAvailable ? .availableColor : .unavailableColor
+    }
     var author: String {
         Helper.validateString(book.author)
     }
@@ -50,14 +57,5 @@ public class InfographicViewModel: InfographicViewModelType {
     }
     var rentLabel: String {
         "rentButton".localized()
-    }
-    
-    func availability(_ bookStatus: BookStatus) -> String {
-        switch bookStatus {
-        case .available:
-            return "available".localized()
-        default:
-            return "unavailable".localized()
-        }
     }
 }

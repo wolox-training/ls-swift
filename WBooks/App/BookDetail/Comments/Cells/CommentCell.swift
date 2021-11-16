@@ -66,11 +66,6 @@ final class CommentCell: UITableViewCell {
         selectionColor = UIColor.appColor(.shadowBoxColor)!
     }
     
-    override func layoutSubviews() {
-        super.layoutSubviews()
-        cellView.shadow()
-    }
-    
     // MARK: Custom methods
     public func configureView(viewModel: CommentViewModel) {
         commentUsername.text = viewModel.username
