@@ -7,7 +7,10 @@
 import Foundation
 
 enum ApiError: Error, LocalizedError {
-    case unknown, apiError(reason: String), parserError(reason: String), networkError(from: URLError)
+    case unknown,
+         apiError(reason: String),
+         parserError(reason: String),
+         networkError(from: URLError)
 
     var errorDescription: String? {
         switch self {
