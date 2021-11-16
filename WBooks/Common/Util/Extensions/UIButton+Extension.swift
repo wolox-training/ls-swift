@@ -22,14 +22,14 @@ extension UIButton {
             guard let gradient1 = UIColor.appColor(.gradientB1)?.cgColor, let gradient2 = UIColor.appColor(.gradientB2)?.cgColor else {
                 fatalError("Failed to load the color")
             }
-            addGradient(colors: [gradient1, gradient2], 2)
+            addGradient(colors: [gradient1, gradient2])
         case .grey:
             guard let gradient1 = UIColor.appColor(.gradientBD1)?.cgColor,
                   let gradient2 = UIColor.appColor(.gradientBD2)?.cgColor,
                   let gradient3 = UIColor.appColor(.gradientBD3)?.cgColor else {
                 fatalError("Failed to load the color")
             }
-            addGradient(colors: [gradient1, gradient2, gradient3], 3)
+            addGradient(colors: [gradient1, gradient2, gradient3])
         case .transparent:
             self.setTitleColor(UIColor.appColor(.secondaryColor), for: .normal)
             self.backgroundColor = .clear
@@ -49,10 +49,10 @@ extension UIButton {
         self.clipsToBounds = true
     }
     
-    func addGradient(colors: [CGColor], _ count: Int) {
+    func addGradient(colors: [CGColor]) {
         let gradientLayer = CAGradientLayer()
         gradientLayer.colors = colors
-        gradientLayer.locations = count == 2 ? [0, 1] : [0, 0.4523078762755102, 1]
+        gradientLayer.locations = colors.count == 2 ? [0, 1] : [0, 0.4523078762755102, 1]
         gradientLayer.startPoint = CGPoint(x: 0.06, y: 0.5)
         gradientLayer.endPoint = CGPoint(x: 1, y: 0.5)
         gradientLayer.frame = self.bounds
