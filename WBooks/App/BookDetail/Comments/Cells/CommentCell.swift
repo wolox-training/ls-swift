@@ -19,8 +19,4 @@ final class CommentCell: UITableViewCell {
         super.awakeFromNib()
         backgroundColor = .clear
     }
-    
-    override func layoutSubviews() {
-        super.layoutSubviews()
-    }
 }
