@@ -76,10 +76,10 @@ final class InfographicView: BaseNibView {
     // MARK: Custom methods
     func configure(viewModel: InfographicViewModel) {
         bookTitleLabel.text = viewModel.title
-        bookStatusLabel.text = viewModel.availability(viewModel.status)
-        bookStatusLabel.textColor = viewModel.isBookAvailable ? UIColor.appColor(.availableColor) : UIColor.appColor(.unavailableColor)
         bookAuthorLabel.text = viewModel.author
         bookYearLabel.text = viewModel.year
+        bookStatusLabel.text = viewModel.statusValue
+        bookStatusLabel.textColor = UIColor.appColor(viewModel.statusColor)
         let imageUrl = URL(string: viewModel.image)
         bookImage.kf.setImage(
             with: imageUrl,
