@@ -5,8 +5,6 @@
 //  Created by leonardo.a.simoza on 7/11/21.
 //
 
-import Foundation
-
 import Moya
 
 protocol ApiProtocol {
@@ -18,6 +16,7 @@ protocol ApiProtocol {
 
 class ApiManager: ApiProtocol {
     
+    // MARK: - Properties
     typealias ApiServices = ApiService
     let provider = MoyaProvider<ApiServices>(
         plugins: [NetworkLoggerPlugin(

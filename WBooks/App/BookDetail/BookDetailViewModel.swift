@@ -5,8 +5,6 @@
 //  Created by leonardo.a.simoza on 09/11/21.
 //
 
-import Foundation
-
 protocol BookDetailViewModelType {
     var navBarTitle: String { get }
     func createInfographicsViewModel() -> InfographicViewModel
