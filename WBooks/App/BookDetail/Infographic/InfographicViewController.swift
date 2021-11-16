@@ -32,5 +32,4 @@ final class InfographicViewController: BaseViewController {
         super.loadView()
         view = infographicView
     }
-
 }
