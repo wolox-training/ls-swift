@@ -11,7 +11,10 @@ final class CommentsView: BaseNibView {
     
     // MARK: Properties
     @IBOutlet var viewContainer: UIView! {
-        didSet { viewContainer.backgroundColor = .clear }
+        didSet {
+            viewContainer.backgroundColor = .clear
+            viewContainer.shadow()
+        }
     }
     @IBOutlet weak var tableView: UITableView! {
         didSet {
