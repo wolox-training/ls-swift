@@ -5,7 +5,6 @@
 //  Created by leonardo.a.simoza on 4/11/21.
 //
 
-import Foundation
 import Moya
 import CocoaLumberjack
 import RxSwift

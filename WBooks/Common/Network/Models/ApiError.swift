@@ -4,7 +4,6 @@
 //
 //  Created by leonardo.a.simoza on 7/11/21.
 //
-
 import Foundation
 
 enum ApiError: Error, LocalizedError {

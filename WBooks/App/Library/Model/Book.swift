@@ -5,8 +5,6 @@
 //  Created by leonardo.a.simoza on 30/10/21.
 //
 
-import Foundation
-
 typealias Books = [Book]
 
 // MARK: - Book

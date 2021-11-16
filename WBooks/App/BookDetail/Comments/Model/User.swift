@@ -5,8 +5,6 @@
 //  Created by leonardo.a.simoza on 11/11/21.
 //
 
-import UIKit
-
 // MARK: - User
 struct User: Codable {
     let id: Int
