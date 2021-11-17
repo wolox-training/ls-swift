@@ -40,7 +40,9 @@ public class CommentsViewModel {
                     observer.onNext(comments)
                     observer.onCompleted()
                 case .failure(let error):
-                    DDLogError("Error getting comments \(error.localizedDescription)")
+                    var msgError = "Error getting Comments "
+                    msgError = msgError.appending(error.errorDescription ?? "")
+                    DDLogError(msgError)
                     observer.onError(error)
                 }
             })

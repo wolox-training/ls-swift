@@ -10,31 +10,16 @@ import Moya
 import CocoaLumberjack
 
 protocol UserRepositoryProtocol {
-    func fetchUser(userId: Int, completion: @escaping (Result<User, ApiError>) -> Void)
+    func fetchUser(userId: Int, completion: @escaping HandleCompletion<User>)
 }
 
 internal class UserRepository: UserRepositoryProtocol {
     
     // MARK: API calls
-    func fetchUser(userId: Int, completion: @escaping (Result<User, ApiError>) -> Void) {
-        provider.rx.request(.userById(userId: userId)).flatMap { (response) -> Single<User> in
-            guard let httpResponse = response.response,
-                      httpResponse.statusCode == 200 else {
-                          switch response.statusCode {
-                          case 401:
-                              throw ApiError.apiError(reason: "Unauthorized")
-                          case 403:
-                              throw ApiError.apiError(reason: "Resource forbidden")
-                          case 404:
-                              throw ApiError.networkError(from: URLError(.badServerResponse))
-                          case 405..<500:
-                              throw ApiError.apiError(reason: "Client error")
-                          case 500..<600:
-                              throw ApiError.apiError(reason: "Server error")
-                          default:
-                              throw ApiError.apiError(reason: "Server error")
-                          }
-                      }
+    func fetchUser(userId: Int, completion: @escaping HandleCompletion<User>) {
+        provider.rx.request(.userById(userId: userId)).flatMap { (response) ->
+            Single<User> in
+            try ApiService.statusResponse(response)
             let user = try response.map(User.self)
             return Single.just(user)
         }.subscribe(onSuccess: { (data) in

@@ -10,6 +10,7 @@ import CocoaLumberjack
 import RxSwift
 
 let provider = MoyaProvider<ApiService>()
+typealias HandleCompletion<T> = (Result<T, ApiError>) -> Void
 
 enum ApiService {
     case books
@@ -53,5 +54,24 @@ extension ApiService: TargetType {
     
     var headers: [String: String]? {
         return ["Content-type": "application/json"]
+    }
+    
+    static func statusResponse(_ response: Response) throws {
+        guard let httpResponse = response.response,
+              httpResponse.statusCode == 200 || httpResponse.statusCode == 201
+        else {
+            switch response.statusCode {
+            case 401:
+                throw ApiError.apiError(reason: "Unauthorized")
+            case 403:
+                throw ApiError.apiError(reason: "Resource forbidden")
+            case 404:
+                throw ApiError.networkError(from: URLError(.badServerResponse))
+            case 405..<500:
+                throw ApiError.apiError(reason: "Client error")
+            default:
+                throw ApiError.apiError(reason: "Server error")
+            }
+        }
     }
 }

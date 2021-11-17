@@ -48,7 +48,9 @@ public class LibraryViewModel: NSObject, LibraryViewModelType {
                     observer.onNext(books)
                     observer.onCompleted()
                 case .failure(let error):
-                    DDLogError("Error getting Books \(error.localizedDescription)")
+                    var msgError = "Error getting Books "
+                    msgError = msgError.appending(error.errorDescription ?? "")
+                    DDLogError(msgError)
                     observer.onError(error)
                 }
             })

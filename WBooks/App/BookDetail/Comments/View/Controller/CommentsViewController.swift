@@ -7,6 +7,7 @@
 
 import Foundation
 import RxSwift
+import CocoaLumberjack
 
 final class CommentsViewController: BaseViewController, UIScrollViewDelegate {
     
@@ -49,12 +50,19 @@ private extension CommentsViewController {
             .disposed(by: disposeBag)
         
         viewModel.observableComments()
+            .catch({ error in
+                DDLogError("Error: \(error.localizedDescription)")
+                return Observable.empty()
+            })
             .subscribe(on: MainScheduler.instance)
             .bind(to: commentsView.tableView.rx.items(cellIdentifier: "CommentCell", cellType: CommentCell.self)) { (row, _, cell) in
                 // Configure the cell
                 let commentCellViewModel = self.viewModel.createCommentViewModel(commentIndex: row)
                 commentCellViewModel.observableUser()
-                    .subscribe { _ in
+                    .catch({ error in
+                        DDLogError("Error: \(error.localizedDescription)")
+                        return Observable.empty()
+                    }).subscribe { _ in
                         cell.configureView(viewModel: commentCellViewModel)
                     }.disposed(by: disposeBag)
             }.disposed(by: disposeBag)

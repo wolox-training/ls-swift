@@ -47,7 +47,9 @@ final class CommentViewModel: CommentViewModelType {
                     observer.onNext(user)
                     observer.onCompleted()
                 case .failure(let error):
-                    DDLogError("Error getting User \(error.localizedDescription)")
+                    var msgError = "Error getting User "
+                    msgError = msgError.appending(error.errorDescription ?? "")
+                    DDLogError(msgError)
                     observer.onError(error)
                 }
             })
