@@ -21,6 +21,8 @@ protocol SuggestBookViewModelType {
     var galleryAlertAction: String { get }
     var cameraAlertAction: String { get }
     var cancelAlertAction: String { get }
+    var titleAddBookAlertMessage: String { get }
+    var okAlertAction: String { get }
     func addBook(newBook: Book, completion: @escaping HandleCompletion<Book>)
 }
 
@@ -63,6 +65,12 @@ public class SuggestBookViewModel: SuggestBookViewModelType {
     }
     var cancelAlertAction: String {
         "cancelAlertAction".localized()
+    }
+    var okAlertAction: String {
+        "okAlertAction".localized()
+    }
+    var titleAddBookAlertMessage: String {
+        "titleAddBookAlertMessage".localized()
     }
     
     init(repository: BookRepositoryProtocol = BookRepository()) {

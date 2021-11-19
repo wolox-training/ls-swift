@@ -49,3 +49,5 @@
 "galleryAlertAction" = "Galley";
 "cameraAlertAction" = "Camera";
 "cancelAlertAction" = "Cancel";
+"okAlertAction" = "Ok";
+"titleAddBookAlertMessage" = "Book was successfully added";

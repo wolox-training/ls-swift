@@ -112,22 +112,15 @@ extension SuggestBookController: UIImagePickerControllerDelegate,
     
     func showMessage() {
         let alertActions: [AlertAction] = [
-            .action(title: "No"),
-            .action(title: "Yes")
+            .action(title: viewModel.okAlertAction.localized())
         ]
         showAlert(title: Constants.AppInfo.appName,
-                  message: "Book was successfully added",
+                  message: viewModel.titleAddBookAlertMessage.localized(),
                   style: .alert,
                   actions: alertActions
-        ).subscribe(onNext: { selectedIndex in
-            switch selectedIndex {
-            case 1:
-                print("Redirect")
-            default:
-                print("Done")
-            }
+        ).subscribe(onNext: { _ in
+            print("Redirect")
         }).disposed(by: disposeBag)
-                  
     }
     
     func showAlert() {
