@@ -8,6 +8,7 @@
 protocol BookDetailViewModelType {
     var navBarTitle: String { get }
     func createInfographicsViewModel() -> InfographicViewModel
+    func createCommentsViewModel() -> CommentsViewModel
 }
 
 public class BookDetailViewModel: BookDetailViewModelType {
@@ -28,6 +29,6 @@ public class BookDetailViewModel: BookDetailViewModelType {
     }
     
     func createCommentsViewModel() -> CommentsViewModel {
-        return CommentsViewModel(bookId: book.id)
+        return CommentsViewModel(bookId: book.id ?? 0)
     }
 }

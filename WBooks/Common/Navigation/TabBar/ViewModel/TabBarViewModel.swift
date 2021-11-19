@@ -48,7 +48,8 @@ public class TabBarViewModel: NSObject {
         case 1:
             rootViewController = UIViewController()
         case 2:
-            rootViewController = UIViewController()
+            let viewModel: SuggestBookViewModel = SuggestBookViewModel()
+            rootViewController = SuggestBookController(viewModel: viewModel)
         case 3:
             rootViewController = UIViewController()
         default:

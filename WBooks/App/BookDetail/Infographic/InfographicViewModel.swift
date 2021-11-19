@@ -32,7 +32,7 @@ public class InfographicViewModel: InfographicViewModelType {
         Helper.validateString(book.title)
     }
     var status: BookStatus {
-        book.status
+        book.status ?? BookStatus.unavailable
     }
     var statusValue: String {
         isBookAvailable ? "available".localized() : "unavailable".localized()

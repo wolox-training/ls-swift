@@ -37,3 +37,15 @@
 "rentButton" = "ALQUILAR";
 "available" = "Disponible";
 "unavailable" = "No disponible";
+
+// MARK: Book Suggest
+"submitButton" = "ENVIAR";
+"bookNamePlaceholder" = "Nombre del libro";
+"authorPlaceholder" = "Autor";
+"yearPlaceholder" = "Año";
+"topicPlaceholder" = "Tema";
+"descriptionPlaceholder" = "Descripción";
+"chooseOptionAlertMessage" = "Por favor, elija una opción";
+"galleryAlertAction" = "Galería";
+"cameraAlertAction" = "Cámara";
+"cancelAlertAction" = "Cancelar";

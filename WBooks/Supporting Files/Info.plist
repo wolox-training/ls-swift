@@ -44,5 +44,9 @@
 			</array>
 		</dict>
 	</dict>
+    <key>NSCameraUsageDescription</key>
+    <string>$(PRODUCT_NAME) wants to access to your camera to take profile photo</string>
+    <key>NSPhotoLibraryUsageDescription</key>
+    <string>$(PRODUCT_NAME) wants to access your gallery to choose your profile photo</string>
 </dict>
 </plist>

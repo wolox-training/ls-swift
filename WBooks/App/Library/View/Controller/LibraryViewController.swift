@@ -38,6 +38,11 @@ final class LibraryViewController: BaseViewController, UIScrollViewDelegate {
         view = libraryView
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        viewModel.fetchBooks()
+        libraryView.libraryTable.reloadData()
+    }
+    
     func configureNavigation() {
         initNavigation(title: viewModel.navBarTitle, hasBack: false)
         let tapGestureRecognizerSearch = UITapGestureRecognizer(target: self, action: #selector(activeSearch))
@@ -64,10 +69,11 @@ private extension LibraryViewController {
     }
     
     func loadLibrary() {
+        viewModel.fetchBooks()
         libraryView.libraryTable.rx.setDelegate(self)
             .disposed(by: disposeBag)
         
-        viewModel.observableBooks()
+        viewModel.booksData
             .subscribe(on: MainScheduler.instance)
             .catch({ error in
                 DDLogError("Error: \(error.localizedDescription)")

@@ -10,8 +10,9 @@ import CocoaLumberjack
 
 protocol LibraryViewModelType {
     var books: Books { get set }
+    var booksData: BehaviorSubject<Books> { get set }
     var navBarTitle: String { get }
-    func observableBooks() -> Observable<Books>
+    func fetchBooks()
     func createBookCellViewModel(for bookIndex: Int) -> BookCellViewModel
     func createBookDetailViewModel(book: Book) -> BookDetailViewModel
 }
@@ -21,6 +22,7 @@ public class LibraryViewModel: NSObject, LibraryViewModelType {
     // MARK: Properties
     private let repository: BookRepositoryProtocol
     internal var books: Books = Books()
+    var booksData: BehaviorSubject<Books> = BehaviorSubject<Books>(value: Books())
     
     var navBarTitle: String {
         "libraryTitleNavBar".localized()
@@ -38,23 +40,18 @@ public class LibraryViewModel: NSObject, LibraryViewModelType {
         return BookDetailViewModel(book: book)
     }
     
-    func observableBooks() -> Observable<Books> {
-        return Observable.create { [weak self] observer in
-            self?.repository.fetchBooks(completion: { [weak self] result in
-                switch result {
-                case .success(let books):
-                    DDLogDebug("Books \(books.count)")
-                    self?.books = books
-                    observer.onNext(books)
-                    observer.onCompleted()
-                case .failure(let error):
-                    var msgError = "Error getting Books "
-                    msgError = msgError.appending(error.errorDescription ?? "")
-                    DDLogError(msgError)
-                    observer.onError(error)
-                }
-            })
-            return Disposables.create()
-        }
+    func fetchBooks() {
+        self.repository.fetchBooks(completion: { [weak self] result in
+            switch result {
+            case .success(let books):
+                DDLogDebug("Books \(books.count)")
+                self?.books = books
+                self?.booksData.on(.next(books))
+            case .failure(let error):
+                var msgError = "Error getting Books "
+                msgError = msgError.appending(error.errorDescription ?? "")
+                DDLogError(msgError)
+            }
+        })
     }
 }

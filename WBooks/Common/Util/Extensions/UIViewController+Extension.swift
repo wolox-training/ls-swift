@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 extension UIViewController {
     func initializeHideKeyboard() {
@@ -36,6 +38,25 @@ extension UIViewController {
             self.present(viewControllerToPresent, animated: false, completion: completion)
         } else {
             self.present(viewControllerToPresent, animated: flag, completion: completion)
+        }
+    }
+    
+    func showAlert(title: String?,
+                   message: String?,
+                   style: UIAlertController.Style,
+                   actions: [AlertAction]) -> Observable<Int> {
+        return Observable.create { observer in
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: style)
+            
+            actions.enumerated().forEach { index, action in
+                let action = UIAlertAction(title: action.title, style: action.style) { _ in
+                    observer.onNext(index)
+                    observer.onCompleted()
+                }
+                alertController.addAction(action)
+            }
+            self.present(alertController, animated: true, completion: nil)
+            return Disposables.create { alertController.dismiss(animated: true, completion: nil) }
         }
     }
 }
