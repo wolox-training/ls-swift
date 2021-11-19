@@ -74,5 +74,15 @@ private extension LibraryViewController {
                 let bookCellViewModel = self.viewModel.createBookCellViewModel(for: row)
                 cell.configureView(viewModel: bookCellViewModel)
             }.disposed(by: disposeBag)
+        
+        libraryView.libraryTable.rx.modelSelected(Book.self)
+            .subscribe(onNext: { [weak self] book in
+                guard let bookDetailViewModel = self?.viewModel.createBookDetailViewModel(book: book) else { return }
+                let bookDetailViewController = BookDetailViewController(viewModel: bookDetailViewModel)
+                bookDetailViewController.modalPresentationStyle = .fullScreen
+                bookDetailViewController.hidesBottomBarWhenPushed = true
+                self?.navigationController?.pushViewController(bookDetailViewController, animated: true)
+            })
+            .disposed(by: disposeBag)
     }
 }

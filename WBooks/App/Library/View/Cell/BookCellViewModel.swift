@@ -7,7 +7,14 @@
 
 import UIKit
 
-final class BookCellViewModel {
+protocol BookCellViewModelType {
+    var title: String { get }
+    var author: String { get }
+    var image: String { get }
+    func validateString(_ value: String?) -> String
+}
+
+final class BookCellViewModel: BookCellViewModelType {
     
     // MARK: Properties
     private let book: Book
@@ -17,12 +24,20 @@ final class BookCellViewModel {
     }
     
     var title: String {
-        book.title ?? "Unknown"
+        validateString(book.title)
     }
     var author: String {
-        book.author ?? "Unknown"
+        validateString(book.author)
     }
     var image: String {
         book.image ?? ""
+    }
+    
+    func validateString(_ value: String?) -> String {
+        if let dataString = value, !dataString.isEmpty {
+            return dataString.capitalized
+        } else {
+            return "Unknown"
+        }
     }
 }

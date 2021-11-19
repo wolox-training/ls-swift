@@ -64,8 +64,8 @@ final class BookCell: UITableViewCell {
     
     // MARK: Custom methods
     public func configureView(viewModel: BookCellViewModel) {
-        bookTitle.text = viewModel.title.isEmpty ? "Unknown" : viewModel.title.capitalized
-        bookAuthor.text = viewModel.author.isEmpty ? "Unknown" : viewModel.author.capitalized
+        bookTitle.text = viewModel.title
+        bookAuthor.text = viewModel.author
         let imageUrl = URL(string: viewModel.image)
         bookImage.kf.setImage(
             with: imageUrl,
@@ -79,7 +79,7 @@ final class BookCell: UITableViewCell {
             case .success(let value):
                 DDLogDebug("Task done for: \(value.source.url?.absoluteString ?? "")")
             case .failure(let error):
-                DDLogDebug("Job failed: \(error.localizedDescription)")
+                DDLogError("Job failed: \(error.localizedDescription)")
             }
         }
     }
