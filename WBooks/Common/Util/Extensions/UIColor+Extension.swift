@@ -22,6 +22,7 @@ enum AssetsColor: String {
     case gradientBD2 = "GradientBD2"
     case gradientBD3 = "GradientBD3"
     case separatorLineColor = "SeparatorLineColor"
+    case placeholderColor = "PlaceholderColor"
 }
 
 extension UIColor {

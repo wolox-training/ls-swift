@@ -14,6 +14,7 @@ typealias HandleCompletion<T> = (Result<T, ApiError>) -> Void
 
 enum ApiService {
     case books
+    case addBook(book: Book)
     case commentsById(bookId: Int)
     case userById(userId: Int)
     case suggestionsById(bookId: Int)
@@ -29,6 +30,8 @@ extension ApiService: TargetType {
         switch self {
         case .books:
             return ApiConfig.manager.apiVersion.appending(Constants.PathWS.books)
+        case .addBook:
+            return ApiConfig.manager.apiVersion.appending(Constants.PathWS.books)
         case .commentsById(let id):
             return ApiConfig.manager.apiVersion.appending(Constants.PathWS.bookCommentsById(id: id))
         case .userById(let id):
@@ -42,6 +45,8 @@ extension ApiService: TargetType {
         switch self {
         case .books, .suggestionsById, .commentsById, .userById:
             return .get
+        case .addBook:
+            return .post
         }
     }
     
@@ -49,6 +54,16 @@ extension ApiService: TargetType {
         switch self {
         case .books, .suggestionsById, .commentsById, .userById:
             return .requestPlain
+        case .addBook(let newBook):
+            let parameters = [
+                "author": newBook.author ?? "",
+                "title": newBook.title ?? "",
+                "image": newBook.image ?? "",
+                "year": newBook.year ?? "",
+                "genre": newBook.genre ?? "",
+                "status": newBook.status!.rawValue
+            ]
+            return .requestJSONEncodable(parameters)
         }
     }
     

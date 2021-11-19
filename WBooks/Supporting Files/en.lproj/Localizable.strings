@@ -37,3 +37,17 @@
 "rentButton" = "RENT";
 "available" = "Available";
 "unavailable" = "Not available";
+
+// MARK: Book Suggest
+"submitButton" = "SUBMIT";
+"bookNamePlaceholder" = "Book´s name";
+"authorPlaceholder" = "Author";
+"yearPlaceholder" = "Year";
+"topicPlaceholder" = "Topic";
+"descriptionPlaceholder" = "Description";
+"chooseOptionAlertMessage" = "Please choose an option";
+"galleryAlertAction" = "Galley";
+"cameraAlertAction" = "Camera";
+"cancelAlertAction" = "Cancel";
+"okAlertAction" = "Ok";
+"titleAddBookAlertMessage" = "Book was successfully added";

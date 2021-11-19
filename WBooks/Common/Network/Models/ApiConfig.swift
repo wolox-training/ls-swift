@@ -5,8 +5,6 @@
 //  Created by leonardo.a.simoza on 7/11/21.
 //
 
-import Foundation
-
 struct ApiConfig {
     let endpoint: String
     let apiVersion: String

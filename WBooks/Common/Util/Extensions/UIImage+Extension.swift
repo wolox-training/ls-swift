@@ -17,6 +17,7 @@ enum AssetsImage: String {
     case iconTab4 = "IconTab4"
     case Commentator1 = "Commentator1"
     case Commentator2 = "Commentator2"
+    case addPhoto = "AddPhoto"
 }
 
 extension UIImage {

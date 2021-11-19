@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="19455" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19454"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SuggestBookView" customModule="WBooks" customModuleProvider="target">
+            <connections>
+                <outlet property="addPhotoButton" destination="2QD-wi-Vo6" id="aTm-pA-UOx"/>
+                <outlet property="addPhotoButtonTopConstraint" destination="tbF-9M-j8r" id="mY7-Qp-KLO"/>
+                <outlet property="authorTextField" destination="1Me-KH-1WA" id="tV6-M7-YWg"/>
+                <outlet property="bookNameTextField" destination="vdo-Gs-eN8" id="ZOE-Ov-jsN"/>
+                <outlet property="descriptionTextField" destination="jbD-4X-CmJ" id="Vp1-kY-Lrn"/>
+                <outlet property="stackView" destination="MzY-VT-0P7" id="vzm-25-ABv"/>
+                <outlet property="stackViewTopConstraint" destination="SEo-wT-jk3" id="Yhq-hT-WRW"/>
+                <outlet property="submitButton" destination="jI8-kx-lQD" id="lAF-JS-z47"/>
+                <outlet property="submitButtonTopConstraint" destination="FlG-Jg-Yx8" id="1EQ-iE-Ntq"/>
+                <outlet property="topicTextField" destination="Lpj-Ip-DtB" id="h0M-IY-ffk"/>
+                <outlet property="viewBottomConstraint" destination="E5y-j6-7ET" id="fDh-LC-q2c"/>
+                <outlet property="viewContainer" destination="iN0-l3-epB" id="X12-v7-Zsi"/>
+                <outlet property="viewTopConstraint" destination="e4h-o8-pw0" id="o4l-Ni-jgN"/>
+                <outlet property="yearTextField" destination="0mS-rz-0yh" id="RIE-xI-4aC"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="NavigationBar" translatesAutoresizingMaskIntoConstraints="NO" id="BtG-Mb-YCS">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="102"/>
+                    <color key="backgroundColor" name="AccentColor"/>
+                </imageView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="46j-zA-Lui">
+                    <rect key="frame" x="20" y="140" width="335" height="517"/>
+                    <subviews>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2QD-wi-Vo6">
+                            <rect key="frame" x="26" y="26" width="96" height="96"/>
+                            <color key="backgroundColor" name="AccentColor"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="96" id="60B-hA-U4d"/>
+                                <constraint firstAttribute="width" secondItem="2QD-wi-Vo6" secondAttribute="height" multiplier="1:1" id="sWc-Sa-5ty"/>
+                            </constraints>
+                            <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="MzY-VT-0P7">
+                            <rect key="frame" x="26" y="153" width="261" height="222.5"/>
+                            <subviews>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vdo-Gs-eN8" customClass="CustomTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="0.0" width="261" height="28.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="1Me-KH-1WA" customClass="CustomTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="48.5" width="261" height="28.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="0mS-rz-0yh" customClass="CustomTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="97" width="261" height="28.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Lpj-Ip-DtB" customClass="CustomTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="145.5" width="261" height="28.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                                <textField opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jbD-4X-CmJ" customClass="CustomTextField" customModule="WBooks" customModuleProvider="target">
+                                    <rect key="frame" x="0.0" y="194" width="261" height="28.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                </textField>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="1Me-KH-1WA" firstAttribute="height" secondItem="vdo-Gs-eN8" secondAttribute="height" id="4Ix-Mu-pxk"/>
+                                <constraint firstItem="Lpj-Ip-DtB" firstAttribute="height" secondItem="vdo-Gs-eN8" secondAttribute="height" id="52S-AI-iaL"/>
+                                <constraint firstItem="0mS-rz-0yh" firstAttribute="height" secondItem="vdo-Gs-eN8" secondAttribute="height" id="8W5-1D-cMf"/>
+                                <constraint firstItem="jbD-4X-CmJ" firstAttribute="height" secondItem="vdo-Gs-eN8" secondAttribute="height" id="Koc-aD-a2V"/>
+                            </constraints>
+                        </stackView>
+                        <button opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="jI8-kx-lQD">
+                            <rect key="frame" x="30" y="414.5" width="275" height="50"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="50" id="XOS-GC-Vka"/>
+                                <constraint firstAttribute="width" constant="275" id="oD2-LF-1Tn"/>
+                            </constraints>
+                            <state key="normal" title="Button"/>
+                            <buttonConfiguration key="configuration" style="plain" title="Submit"/>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    <constraints>
+                        <constraint firstItem="jI8-kx-lQD" firstAttribute="top" secondItem="MzY-VT-0P7" secondAttribute="bottom" constant="39" id="FlG-Jg-Yx8"/>
+                        <constraint firstItem="2QD-wi-Vo6" firstAttribute="leading" secondItem="46j-zA-Lui" secondAttribute="leading" constant="26" id="G17-lW-xod"/>
+                        <constraint firstItem="MzY-VT-0P7" firstAttribute="top" secondItem="2QD-wi-Vo6" secondAttribute="bottom" constant="31" id="SEo-wT-jk3"/>
+                        <constraint firstItem="jI8-kx-lQD" firstAttribute="centerX" secondItem="46j-zA-Lui" secondAttribute="centerX" id="pE3-Yb-B0G"/>
+                        <constraint firstAttribute="trailing" secondItem="MzY-VT-0P7" secondAttribute="trailing" constant="48" id="qxH-ZH-qTh"/>
+                        <constraint firstItem="2QD-wi-Vo6" firstAttribute="top" secondItem="46j-zA-Lui" secondAttribute="top" constant="26" id="tbF-9M-j8r"/>
+                        <constraint firstItem="MzY-VT-0P7" firstAttribute="leading" secondItem="46j-zA-Lui" secondAttribute="leading" constant="26" id="wpw-z6-Iot"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="46j-zA-Lui" secondAttribute="trailing" constant="20" id="2cn-4c-aql"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="46j-zA-Lui" secondAttribute="bottom" constant="10" id="E5y-j6-7ET"/>
+                <constraint firstItem="BtG-Mb-YCS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="L4e-sA-TY3"/>
+                <constraint firstItem="vdo-Gs-eN8" firstAttribute="height" secondItem="iN0-l3-epB" secondAttribute="height" multiplier="0.0427286" id="Owa-gF-PZV"/>
+                <constraint firstItem="BtG-Mb-YCS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="aXd-ad-Gqg"/>
+                <constraint firstAttribute="trailing" secondItem="BtG-Mb-YCS" secondAttribute="trailing" id="ddr-BT-Lqt"/>
+                <constraint firstItem="46j-zA-Lui" firstAttribute="top" secondItem="BtG-Mb-YCS" secondAttribute="bottom" constant="38" id="e4h-o8-pw0"/>
+                <constraint firstItem="46j-zA-Lui" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="pkx-3e-NT0"/>
+            </constraints>
+            <point key="canvasLocation" x="138.40000000000001" y="95.802098950524751"/>
+        </view>
+    </objects>
+    <designables>
+        <designable name="0mS-rz-0yh">
+            <size key="intrinsicContentSize" width="5" height="19.5"/>
+        </designable>
+        <designable name="1Me-KH-1WA">
+            <size key="intrinsicContentSize" width="5" height="19.5"/>
+        </designable>
+        <designable name="Lpj-Ip-DtB">
+            <size key="intrinsicContentSize" width="5" height="19.5"/>
+        </designable>
+        <designable name="jbD-4X-CmJ">
+            <size key="intrinsicContentSize" width="5" height="19.5"/>
+        </designable>
+        <designable name="vdo-Gs-eN8">
+            <size key="intrinsicContentSize" width="5" height="19.5"/>
+        </designable>
+    </designables>
+    <resources>
+        <image name="NavigationBar" width="375" height="102"/>
+        <namedColor name="AccentColor">
+            <color red="0.91764705882352937" green="0.96470588235294119" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
