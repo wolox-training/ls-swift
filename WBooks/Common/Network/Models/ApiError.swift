@@ -4,24 +4,22 @@
 //
 //  Created by leonardo.a.simoza on 7/11/21.
 //
+import Foundation
 
-enum ApiError: Error {
-    case apiError(ErrorModel)
-    
-    func get() -> ErrorModel {
+enum ApiError: Error, LocalizedError {
+    case unknown,
+         apiError(reason: String),
+         parserError(reason: String),
+         networkError(from: URLError)
+
+    var errorDescription: String? {
         switch self {
-        case .apiError(let model):
-            return model
+        case .unknown:
+            return "Unknown error"
+        case .apiError(let reason), .parserError(let reason):
+            return reason
+        case .networkError(let from):
+            return from.localizedDescription
         }
-    }
-}
-
-struct ErrorModel: Codable {
-    let timestamp, message: String?
-    let statusCode: Int?
-    
-    enum ApiError: String, CodingKey {
-        case timestamp, message
-        case statusCode
     }
 }

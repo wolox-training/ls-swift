@@ -29,7 +29,7 @@ public class InfographicViewModel: InfographicViewModelType {
         book.image ?? ""
     }
     var title: String {
-        book.title ?? "Unknown"
+        Helper.validateString(book.title)
     }
     var status: BookStatus {
         book.status
@@ -41,13 +41,13 @@ public class InfographicViewModel: InfographicViewModelType {
         isBookAvailable ? .availableColor : .unavailableColor
     }
     var author: String {
-        book.author ?? "Unknown"
+        Helper.validateString(book.author)
     }
     var year: String {
         book.year ?? ""
     }
     var genre: String {
-        book.genre ?? "Unknown"
+        Helper.validateString(book.genre)
     }
     var isBookAvailable: Bool {
         status == BookStatus.available

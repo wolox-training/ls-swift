@@ -69,6 +69,10 @@ private extension LibraryViewController {
         
         viewModel.observableBooks()
             .subscribe(on: MainScheduler.instance)
+            .catch({ error in
+                DDLogError("Error: \(error.localizedDescription)")
+                return Observable.empty()
+            })
             .bind(to: libraryView.libraryTable.rx.items(cellIdentifier: "BookCell", cellType: BookCell.self)) { (row, _, cell) in
                 // Configure the cell
                 let bookCellViewModel = self.viewModel.createBookCellViewModel(for: row)

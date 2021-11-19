@@ -27,6 +27,8 @@
 		1E611A08273E27CE002ECD34 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E611A07273E27CE002ECD34 /* Comment.swift */; };
 		1E611A0A273E27FC002ECD34 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E611A09273E27FC002ECD34 /* User.swift */; };
 		1E611A0C273E9B6D002ECD34 /* UIButton+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E611A0B273E9B6D002ECD34 /* UIButton+Extension.swift */; };
+		1E611A0E273ED46D002ECD34 /* CommentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E611A0D273ED46D002ECD34 /* CommentRepository.swift */; };
+		1E611A10273F3866002ECD34 /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E611A0F273F3866002ECD34 /* CommentViewModel.swift */; };
 		1E69A60A2737886400480F12 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E69A6092737886400480F12 /* Environment.swift */; };
 		1E6D3228272C4BDF005993D5 /* BookCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1E6D3227272C4BDF005993D5 /* BookCell.xib */; };
 		1E6D322A272C520C005993D5 /* UITableView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1E6D3229272C520C005993D5 /* UITableView+Extension.swift */; };
@@ -51,6 +53,7 @@
 		1EA59B3A2729CEE600592820 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA59B392729CEE600592820 /* UIColor+Extension.swift */; };
 		1EA59B3C272A1E7A00592820 /* UIViewController+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA59B3B272A1E7A00592820 /* UIViewController+Extension.swift */; };
 		1EA59B3F272A1F0600592820 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA59B3E272A1F0600592820 /* BaseViewController.swift */; };
+		1EA94F9C274135AF00243BD7 /* UserRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EA94F9B274135AF00243BD7 /* UserRepository.swift */; };
 		1EB1514027316A460058050D /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1EB1513F27316A460058050D /* Helper.swift */; };
 		1EB1515727317B470058050D /* SFUIText-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EB1514B27317B450058050D /* SFUIText-Regular.ttf */; };
 		1EB1515827317B470058050D /* SFUIText-HeavyItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1EB1514C27317B450058050D /* SFUIText-HeavyItalic.ttf */; };
@@ -127,6 +130,8 @@
 		1E611A07273E27CE002ECD34 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		1E611A09273E27FC002ECD34 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		1E611A0B273E9B6D002ECD34 /* UIButton+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton+Extension.swift"; sourceTree = "<group>"; };
+		1E611A0D273ED46D002ECD34 /* CommentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentRepository.swift; sourceTree = "<group>"; };
+		1E611A0F273F3866002ECD34 /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 		1E69A6092737886400480F12 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
 		1E6D3227272C4BDF005993D5 /* BookCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BookCell.xib; sourceTree = "<group>"; };
 		1E6D3229272C520C005993D5 /* UITableView+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+Extension.swift"; sourceTree = "<group>"; };
@@ -152,6 +157,7 @@
 		1EA59B392729CEE600592820 /* UIColor+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		1EA59B3B272A1E7A00592820 /* UIViewController+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController+Extension.swift"; sourceTree = "<group>"; };
 		1EA59B3E272A1F0600592820 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		1EA94F9B274135AF00243BD7 /* UserRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRepository.swift; sourceTree = "<group>"; };
 		1EB1513F27316A460058050D /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		1EB1514B27317B450058050D /* SFUIText-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-Regular.ttf"; sourceTree = "<group>"; };
 		1EB1514C27317B450058050D /* SFUIText-HeavyItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SFUIText-HeavyItalic.ttf"; sourceTree = "<group>"; };
@@ -344,6 +350,7 @@
 			children = (
 				1E611A00273DF00A002ECD34 /* CommentCell.swift */,
 				1E6119FA273CA9E3002ECD34 /* CommentCell.xib */,
+				1E611A0F273F3866002ECD34 /* CommentViewModel.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -600,6 +607,8 @@
 			isa = PBXGroup;
 			children = (
 				1EB151792734414B0058050D /* BookRepository.swift */,
+				1E611A0D273ED46D002ECD34 /* CommentRepository.swift */,
+				1EA94F9B274135AF00243BD7 /* UserRepository.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -991,11 +1000,13 @@
 				1E8F7F562738066000F9915A /* ApiError.swift in Sources */,
 				1E6119E1273CA0E7002ECD34 /* BookDetailViewController.swift in Sources */,
 				1E827E62272BA22F003A7E7F /* LibraryView.swift in Sources */,
+				1EA94F9C274135AF00243BD7 /* UserRepository.swift in Sources */,
 				1EC4BB35272380BB00F1A058 /* AppDelegate.swift in Sources */,
 				1EB1517C273442800058050D /* ApiService.swift in Sources */,
 				1E6119EB273CA3AE002ECD34 /* CommentsViewModel.swift in Sources */,
 				1E40EC5C27287D7700FBD71F /* BaseNibView.swift in Sources */,
 				1E827E6D272BA803003A7E7F /* NavigationController.swift in Sources */,
+				1E611A10273F3866002ECD34 /* CommentViewModel.swift in Sources */,
 				1E72E1F9272DE60D0005C824 /* Book.swift in Sources */,
 				1E6119F1273CA443002ECD34 /* InfographicViewController.swift in Sources */,
 				1E6D322A272C520C005993D5 /* UITableView+Extension.swift in Sources */,
@@ -1010,6 +1021,7 @@
 				1E827E66272BA6D7003A7E7F /* BookCell.swift in Sources */,
 				1EB151702733505F0058050D /* TabBarItem.swift in Sources */,
 				1E6119E3273CA107002ECD34 /* BookDetailView.swift in Sources */,
+				1E611A0E273ED46D002ECD34 /* CommentRepository.swift in Sources */,
 				1E8F7F5927380EC400F9915A /* ApiManager.swift in Sources */,
 				1EA59B3C272A1E7A00592820 /* UIViewController+Extension.swift in Sources */,
 				1E827E60272BA220003A7E7F /* LibraryViewController.swift in Sources */,

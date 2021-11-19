@@ -13,11 +13,14 @@ final class BookDetailViewController: BaseViewController {
     private lazy var bookDetailView = BookDetailView()
     private var viewModel: BookDetailViewModel
     private let infographicViewController: InfographicViewController
+    private let commentsViewController: CommentsViewController
     
     init(viewModel: BookDetailViewModel) {
         self.viewModel = viewModel
         let infographicViewModel = viewModel.createInfographicsViewModel()
         infographicViewController = InfographicViewController(viewModel: infographicViewModel)
+        let commentsViewModel = viewModel.createCommentsViewModel()
+        commentsViewController = CommentsViewController(viewModel: commentsViewModel)
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -30,6 +33,7 @@ final class BookDetailViewController: BaseViewController {
         super.viewDidLoad()
         configureNavigation()
         loadChild(infographicViewController)
+        loadChild2(commentsViewController)
     }
     
     override func loadView() {
@@ -48,6 +52,17 @@ final class BookDetailViewController: BaseViewController {
                                    width: UIScreen.main.bounds.size.width,
                                    height: Helper.sizeBy(height: 308).screenHeight)
         child.view.frame = frame
+        child.didMove(toParent: self)
+    }
+    private func loadChild2(_ child: UIViewController) {
+        addChild(child)
+        bookDetailView.detailView.addSubview(child.view)
+        let frame: CGRect = CGRect(x: 0.0,
+                                   y: Helper.sizeBy(height: 308).screenHeight,
+                                   width: UIScreen.main.bounds.size.width,
+                                   height: Helper.sizeBy(height: 250).screenHeight)
+        child.view.frame = frame
+        child.view.clipsToBounds = true
         child.didMove(toParent: self)
     }
 }

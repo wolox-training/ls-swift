@@ -31,6 +31,8 @@ struct Constants {
     
     struct PathWS {
         static let books: String = "/books"
+        static let users: String = "/users"
         static func bookCommentsById(id: Int) -> String { return books+"/\(id)/comments" }
+        static func userById(id: Int) -> String { return users+"/\(id)" }
     }
 }

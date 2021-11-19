@@ -27,4 +27,12 @@ class Helper {
         let sizeHeight: CGFloat = (deviceHeight * ((height ?? 0) / baseDeviceHeight))
         return (sizeWidth, sizeHeight)
     }
+    
+    static func validateString(_ value: String?) -> String {
+        if let dataString = value, !dataString.isEmpty {
+            return dataString.capitalized
+        } else {
+            return "Unknown"
+        }
+    }
 }
