@@ -26,4 +26,8 @@ public class BookDetailViewModel: BookDetailViewModelType {
     func createInfographicsViewModel() -> InfographicViewModel {
         return InfographicViewModel(book: book)
     }
+    
+    func createCommentsViewModel() -> CommentsViewModel {
+        return CommentsViewModel(bookId: book.id)
+    }
 }

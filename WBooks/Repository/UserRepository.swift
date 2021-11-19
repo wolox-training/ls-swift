@@ -1,26 +1,27 @@
 //
-//  BookRepository.swift
+//  UserRepository.swift
 //  WBooks
 //
-//  Created by leonardo.a.simoza on 4/11/21.
+//  Created by leonardo.a.simoza on 14/11/21.
 //
 
 import RxSwift
 import Moya
 import CocoaLumberjack
 
-protocol BookRepositoryProtocol {
-    func fetchBooks(completion: @escaping HandleCompletion<Books>)
+protocol UserRepositoryProtocol {
+    func fetchUser(userId: Int, completion: @escaping HandleCompletion<User>)
 }
 
-internal class BookRepository: BookRepositoryProtocol {
+internal class UserRepository: UserRepositoryProtocol {
     
     // MARK: API calls
-    func fetchBooks(completion: @escaping HandleCompletion<Books>) {
-        provider.rx.request(.books).flatMap { (response) -> Single<Books> in
+    func fetchUser(userId: Int, completion: @escaping HandleCompletion<User>) {
+        provider.rx.request(.userById(userId: userId)).flatMap { (response) ->
+            Single<User> in
             try ApiService.statusResponse(response)
-            let books = try response.map(Books.self)
-            return Single.just(books)
+            let user = try response.map(User.self)
+            return Single.just(user)
         }.subscribe(onSuccess: { (data) in
             DDLogDebug("JSON: \(data)")
             completion(.success(data))

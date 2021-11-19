@@ -13,11 +13,10 @@ final class BookDetailView: BaseNibView {
     @IBOutlet var viewContainer: UIView! {
         didSet {
             viewContainer.backgroundColor = UIColor.appColor(.accentColor)
+            viewContainer.clipsToBounds = true
         }
     }
     @IBOutlet weak var detailView: UIView! {
-        didSet {
-            detailView.backgroundColor = .clear
-        }
+        didSet { detailView.backgroundColor = .clear }
     }
 }

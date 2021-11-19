@@ -7,7 +7,13 @@
 
 import UIKit
 
-public class LoginViewModel: NSObject {
+protocol LoginViewModelType {
+    var usernamePlaceholder: String { get }
+    var passwordPlaceholder: String { get }
+    var signInTitle: String { get }
+}
+
+public class LoginViewModel: LoginViewModelType {
     
     var usernamePlaceholder: String {
         "usernamePlaceholder".localized()
