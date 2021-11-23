@@ -14,9 +14,11 @@ typealias HandleCompletion<T> = (Result<T, ApiError>) -> Void
 
 enum ApiService {
     case books
+    case addBook(book: Book)
     case commentsById(bookId: Int)
     case userById(userId: Int)
     case suggestionsById(bookId: Int)
+    case rentalsByUserId(userId: Int)
 }
 
 extension ApiService: TargetType {
@@ -29,10 +31,14 @@ extension ApiService: TargetType {
         switch self {
         case .books:
             return ApiConfig.manager.apiVersion.appending(Constants.PathWS.books)
+        case .addBook:
+            return ApiConfig.manager.apiVersion.appending(Constants.PathWS.books)
         case .commentsById(let id):
             return ApiConfig.manager.apiVersion.appending(Constants.PathWS.bookCommentsById(id: id))
         case .userById(let id):
             return ApiConfig.manager.apiVersion.appending(Constants.PathWS.userById(id: id))
+        case .rentalsByUserId(let id):
+            return ApiConfig.manager.apiVersion.appending(Constants.PathWS.rentalsByUserId(id: id))
         case .suggestionsById(bookId: let bookId):
             return "/book/\(bookId)/comments"
         }
@@ -40,15 +46,27 @@ extension ApiService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .books, .suggestionsById, .commentsById, .userById:
+        case .books, .suggestionsById, .commentsById, .userById, .rentalsByUserId:
             return .get
+        case .addBook:
+            return .post
         }
     }
     
     var task: Task {
         switch self {
-        case .books, .suggestionsById, .commentsById, .userById:
+        case .books, .suggestionsById, .commentsById, .userById, .rentalsByUserId:
             return .requestPlain
+        case .addBook(let newBook):
+            let parameters = [
+                "author": newBook.author ?? "",
+                "title": newBook.title ?? "",
+                "image": newBook.image ?? "",
+                "year": newBook.year ?? "",
+                "genre": newBook.genre ?? "",
+                "status": newBook.status!.rawValue
+            ]
+            return .requestJSONEncodable(parameters)
         }
     }
     

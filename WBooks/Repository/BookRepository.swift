@@ -11,6 +11,9 @@ import CocoaLumberjack
 
 protocol BookRepositoryProtocol {
     func fetchBooks(completion: @escaping HandleCompletion<Books>)
+    func addBook(book: Book, completion: @escaping HandleCompletion<Book>)
+    func fetchComments(bookId: Int,
+                       completion: @escaping HandleCompletion<Comments>)
 }
 
 internal class BookRepository: BookRepositoryProtocol {
@@ -21,6 +24,39 @@ internal class BookRepository: BookRepositoryProtocol {
             try ApiService.statusResponse(response)
             let books = try response.map(Books.self)
             return Single.just(books)
+        }.subscribe(onSuccess: { (data) in
+            DDLogDebug("JSON: \(data)")
+            completion(.success(data))
+        }, onFailure: { (error) in
+            DDLogError("Error: \(error.localizedDescription)")
+            let dataError = MoyaError.underlying(error, nil)
+            completion(.failure(.apiError(reason: dataError.localizedDescription)))
+        }).disposed(by: disposeBag)
+    }
+    
+    func addBook(book: Book, completion: @escaping HandleCompletion<Book>) {
+        provider.rx.request(.addBook(book: book)).flatMap { (response) -> Single<Book> in
+            try ApiService.statusResponse(response)
+            let book = try response.map(Book.self)
+            return Single.just(book)
+        }.subscribe(onSuccess: { (data) in
+            DDLogDebug("JSON: \(data)")
+            completion(.success(data))
+        }, onFailure: { (error) in
+            DDLogError("Error: \(error.localizedDescription)")
+            let dataError = MoyaError.underlying(error, nil)
+            completion(.failure(.apiError(reason: dataError.localizedDescription)))
+        }).disposed(by: disposeBag)
+    }
+    
+    func fetchComments(bookId: Int,
+                       completion: @escaping HandleCompletion<Comments>) {
+        let endpoint = ApiService.commentsById(bookId: bookId)
+        provider.rx.request(endpoint).flatMap { (response) ->
+            Single<Comments> in
+            try ApiService.statusResponse(response)
+            let comments = try response.map(Comments.self)
+            return Single.just(comments)
         }.subscribe(onSuccess: { (data) in
             DDLogDebug("JSON: \(data)")
             completion(.success(data))

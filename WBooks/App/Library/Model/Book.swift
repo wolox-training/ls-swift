@@ -8,21 +8,15 @@
 typealias Books = [Book]
 
 // MARK: - Book
-struct Book: Codable, Hashable {
-    let id: Int
-    let image,
-        title,
-        author,
-        year,
-        genre: String?
-    let status: BookStatus
-    let createdAt,
-        updatedAt: String
+struct Book: Codable {
+    var id: Int?
+    var image: String?
+    var title, author, year: String?
+    var status: BookStatus?
+    var genre, createdAt, updatedAt: String?
 
     enum CodingKeys: String, CodingKey {
-        case id
-        case image, title, author, year, genre
-        case status
+        case id, image, title, author, year, status, genre
         case createdAt = "created_at"
         case updatedAt = "updated_at"
     }

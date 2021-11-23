@@ -27,6 +27,7 @@ struct Constants {
         static let appVersion = infoDictionary["CFBundleShortVersionString"] as? String ?? "Unknown"
         static let buildVersion: String = (infoDictionary["CFBundleVersion"] as AnyObject?) as? String ?? "Unknown"
         static let iosVersion = UIDevice.current.systemVersion
+        static let appName = infoDictionary["CFBundleDisplayName"] as? String
     }
     
     struct PathWS {
@@ -34,5 +35,6 @@ struct Constants {
         static let users: String = "/users"
         static func bookCommentsById(id: Int) -> String { return books+"/\(id)/comments" }
         static func userById(id: Int) -> String { return users+"/\(id)" }
+        static func rentalsByUserId(id: Int) -> String { return users+"/\(id)/rents" }
     }
 }

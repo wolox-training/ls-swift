@@ -1,20 +1,20 @@
 //
-//  LibraryViewController.swift
+//  RentalsViewController.swift
 //  WBooks
 //
-//  Created by leonardo.a.simoza on 28/10/21.
+//  Created by leonardo.a.simoza on 19/11/21.
 //
 
 import CocoaLumberjack
 
-final class LibraryViewController: BaseViewController {
+final class RentalsViewController: BaseViewController {
     
     // MARK: Properties
-    private lazy var libraryView = LibraryView()
-    private var viewModel: LibraryViewModel
-    private var tableViewController = BooksTableViewController(viewModel: LibraryViewModel())
+    private lazy var rentalsView = RentalsView()
+    private var viewModel: BooksTableViewModelType
+    private var tableViewController = BooksTableViewController(viewModel: RentalsViewModel())
     
-    init(viewModel: LibraryViewModel) {
+    init(viewModel: BooksTableViewModelType) {
         self.viewModel = viewModel
         super.init(nibName: nil, bundle: nil)
     }
@@ -31,7 +31,7 @@ final class LibraryViewController: BaseViewController {
     }
     
     override func loadView() {
-        view = libraryView
+        view = rentalsView
     }
     
     func configureNavigation() {
@@ -43,7 +43,7 @@ final class LibraryViewController: BaseViewController {
     }
     
     private func loadViews() {
-        let container: UIView = libraryView.viewContainer
+        let container: UIView = rentalsView.viewContainer
         let childView: UIView = tableViewController.view
         add(tableViewController, frame: container.frame)
         container.translatesAutoresizingMaskIntoConstraints = false

@@ -48,11 +48,13 @@ public class TabBarViewModel: NSObject {
         case 1:
             rootViewController = UIViewController()
         case 2:
-            rootViewController = UIViewController()
+            let viewModel: SuggestBookViewModelType = SuggestBookViewModel()
+            rootViewController = SuggestBookController(viewModel: viewModel)
         case 3:
-            rootViewController = UIViewController()
+            let viewModel: BooksTableViewModelType = RentalsViewModel()
+            rootViewController = RentalsViewController(viewModel: viewModel)
         default:
-            let viewModel: LibraryViewModelType = LibraryViewModel()
+            let viewModel: LibraryViewModel = LibraryViewModel()
             rootViewController = LibraryViewController(viewModel: viewModel)
         }
         tabBarItem.tag = item.order

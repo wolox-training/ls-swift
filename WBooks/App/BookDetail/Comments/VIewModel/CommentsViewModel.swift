@@ -18,10 +18,10 @@ public class CommentsViewModel {
     
     // MARK: Properties
     private let bookId: Int
-    private let repository: CommentRepositoryProtocol
+    private let repository: BookRepositoryProtocol
     internal var comments: Comments = Comments()
     
-    init(bookId: Int, repository: CommentRepositoryProtocol = CommentRepository()) {
+    init(bookId: Int, repository: BookRepositoryProtocol = BookRepository()) {
         self.bookId = bookId
         self.repository = repository
     }
