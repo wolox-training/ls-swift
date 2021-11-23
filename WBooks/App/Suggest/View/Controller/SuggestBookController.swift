@@ -29,7 +29,7 @@ final class SuggestBookController: BaseViewController {
         super.viewDidLoad()
         suggestBookView.configure(viewModel: viewModel)
         configureNavigation()
-        showAlert()
+        settingAlert()
         addBookTapped()
         setValidator()
     }
@@ -121,7 +121,7 @@ extension SuggestBookController: UIImagePickerControllerDelegate,
         }).disposed(by: disposeBag)
     }
     
-    func showAlert() {
+    func settingAlert() {
         suggestBookView.addPhotoButton.rx.tap.asDriver().drive(onNext: {
             self.showAlert(title: Constants.AppInfo.appName,
                            message: self.viewModel.chooseOptionAlertMessage,
