@@ -89,7 +89,6 @@ final class SuggestBookController: BaseViewController {
     }
     
     private func addBookTapped() {
-       
         suggestBookView.submitButton.rx.tap
             .throttle(.seconds(Int(0.5)), latest: false, scheduler: MainScheduler.instance)
             .subscribe { [weak self] _ in
@@ -109,7 +108,6 @@ final class SuggestBookController: BaseViewController {
 
 extension SuggestBookController: UIImagePickerControllerDelegate,
                                  UINavigationControllerDelegate {
-    
     func showMessage() {
         let alertActions: [AlertAction] = [
             .action(title: viewModel.okAlertAction.localized())

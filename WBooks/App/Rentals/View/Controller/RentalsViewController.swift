@@ -28,7 +28,6 @@ final class RentalsViewController: BaseViewController {
         super.viewDidLoad()
         configureNavigation()
         loadViews()
-        
     }
     
     override func loadView() {
