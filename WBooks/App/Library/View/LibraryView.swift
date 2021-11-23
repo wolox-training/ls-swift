@@ -10,20 +10,6 @@ import UIKit
 final class LibraryView: BaseNibView {
     
     // MARK: Properties
-    @IBOutlet weak var libraryTable: UITableView!
-    
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        configure()
-    }
-    
-    required init?(coder: NSCoder) {
-        super.init(coder: coder)
-    }
-    
-    func configure() {
-        libraryTable.backgroundColor = UIColor.appColor(.accentColor)
-        libraryTable.separatorColor = .clear
-        libraryTable.contentInset = UIEdgeInsets(top: 29, left: 0, bottom: 0, right: 0)
-    }
+    @IBOutlet weak var viewContainer: UIView!
+    @IBOutlet weak var navigationBar: UIImageView!
 }

@@ -5,43 +5,22 @@
 //  Created by leonardo.a.simoza on 28/10/21.
 //
 
-import RxSwift
 import CocoaLumberjack
 
-protocol LibraryViewModelType {
-    var books: Books { get set }
-    var booksData: BehaviorSubject<Books> { get set }
-    var navBarTitle: String { get }
-    func fetchBooks()
-    func createBookCellViewModel(for bookIndex: Int) -> BookCellViewModel
-    func createBookDetailViewModel(book: Book) -> BookDetailViewModel
-}
-
-public class LibraryViewModel: NSObject, LibraryViewModelType {
+public class LibraryViewModel: BooksTableViewModel {
     
     // MARK: Properties
-    private let repository: BookRepositoryProtocol
-    internal var books: Books = Books()
-    var booksData: BehaviorSubject<Books> = BehaviorSubject<Books>(value: Books())
-    
-    var navBarTitle: String {
+    private let bookRepository: BookRepositoryProtocol
+    override var navBarTitle: String {
         "libraryTitleNavBar".localized()
     }
     
-    init(repository: BookRepositoryProtocol = BookRepository()) {
-        self.repository = repository
+    init(bookRepository: BookRepositoryProtocol = BookRepository()) {
+        self.bookRepository = bookRepository
     }
     
-    func createBookCellViewModel(for bookIndex: Int) -> BookCellViewModel {
-        return BookCellViewModel(book: books[bookIndex])
-    }
-    
-    func createBookDetailViewModel(book: Book) -> BookDetailViewModel {
-        return BookDetailViewModel(book: book)
-    }
-    
-    func fetchBooks() {
-        self.repository.fetchBooks(completion: { [weak self] result in
+    override func fetchBooks() {
+        self.bookRepository.fetchBooks(completion: { [weak self] result in
             switch result {
             case .success(let books):
                 DDLogDebug("Books \(books.count)")

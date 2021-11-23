@@ -59,4 +59,26 @@ extension UIViewController {
             return Disposables.create { alertController.dismiss(animated: true, completion: nil) }
         }
     }
+    
+    func add(_ child: UIViewController, frame: CGRect? = nil) {
+        addChild(child)
+
+        if let frame = frame {
+            child.view.frame = frame
+        }
+
+        view.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
+    
+    func addChilToContainer(_ child: UIViewController, frame: CGRect? = nil, container: UIView) {
+        addChild(child)
+
+        if let frame = frame {
+            child.view.frame = frame
+        }
+
+        container.addSubview(child.view)
+        child.didMove(toParent: self)
+    }
 }

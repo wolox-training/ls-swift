@@ -18,6 +18,7 @@ enum ApiService {
     case commentsById(bookId: Int)
     case userById(userId: Int)
     case suggestionsById(bookId: Int)
+    case rentalsByUserId(userId: Int)
 }
 
 extension ApiService: TargetType {
@@ -36,6 +37,8 @@ extension ApiService: TargetType {
             return ApiConfig.manager.apiVersion.appending(Constants.PathWS.bookCommentsById(id: id))
         case .userById(let id):
             return ApiConfig.manager.apiVersion.appending(Constants.PathWS.userById(id: id))
+        case .rentalsByUserId(let id):
+            return ApiConfig.manager.apiVersion.appending(Constants.PathWS.rentalsByUserId(id: id))
         case .suggestionsById(bookId: let bookId):
             return "/book/\(bookId)/comments"
         }
@@ -43,7 +46,7 @@ extension ApiService: TargetType {
     
     var method: Moya.Method {
         switch self {
-        case .books, .suggestionsById, .commentsById, .userById:
+        case .books, .suggestionsById, .commentsById, .userById, .rentalsByUserId:
             return .get
         case .addBook:
             return .post
@@ -52,7 +55,7 @@ extension ApiService: TargetType {
     
     var task: Task {
         switch self {
-        case .books, .suggestionsById, .commentsById, .userById:
+        case .books, .suggestionsById, .commentsById, .userById, .rentalsByUserId:
             return .requestPlain
         case .addBook(let newBook):
             let parameters = [

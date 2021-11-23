@@ -32,8 +32,7 @@ final class BookDetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         configureNavigation()
-        loadChild(infographicViewController)
-        loadChild2(commentsViewController)
+        loadViews()
     }
     
     override func loadView() {
@@ -44,25 +43,21 @@ final class BookDetailViewController: BaseViewController {
         initNavigation(title: viewModel.navBarTitle, hasBack: true)
     }
     
-    private func loadChild(_ child: UIViewController) {
-        addChild(child)
-        bookDetailView.detailView.addSubview(child.view)
-        let frame: CGRect = CGRect(x: 0.0,
+    private func loadViews() {
+        let container: UIView = bookDetailView.detailView
+        let infographicFrame: CGRect = CGRect(x: 0.0,
                                    y: 0.0,
                                    width: UIScreen.main.bounds.size.width,
                                    height: Helper.sizeBy(height: 308).screenHeight)
-        child.view.frame = frame
-        child.didMove(toParent: self)
-    }
-    private func loadChild2(_ child: UIViewController) {
-        addChild(child)
-        bookDetailView.detailView.addSubview(child.view)
-        let frame: CGRect = CGRect(x: 0.0,
+        let commentsframe: CGRect = CGRect(x: 0.0,
                                    y: Helper.sizeBy(height: 308).screenHeight,
                                    width: UIScreen.main.bounds.size.width,
                                    height: Helper.sizeBy(height: 250).screenHeight)
-        child.view.frame = frame
-        child.view.clipsToBounds = true
-        child.didMove(toParent: self)
+        addChilToContainer(infographicViewController,
+                           frame: infographicFrame,
+                           container: container)
+        addChilToContainer(commentsViewController,
+                           frame: commentsframe,
+                           container: container)
     }
 }

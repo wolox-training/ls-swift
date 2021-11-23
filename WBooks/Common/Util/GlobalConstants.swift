@@ -35,5 +35,6 @@ struct Constants {
         static let users: String = "/users"
         static func bookCommentsById(id: Int) -> String { return books+"/\(id)/comments" }
         static func userById(id: Int) -> String { return users+"/\(id)" }
+        static func rentalsByUserId(id: Int) -> String { return users+"/\(id)/rents" }
     }
 }
